@@ -1,0 +1,1259 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Electrodynamics &#8212; Electricity and Magnetism</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
+  <script src="_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'MovingCharges';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Electrostatics" href="Electrostatics.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="Electricity and Magnetism - Home"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="Electricity and Magnetism - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Welcome to your Jupyter Book
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="Electrostatics.html">Electrostatics</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Electrodynamics</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/bkclark/Electricity and Magnetism" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/bkclark/Electricity and Magnetism/issues/new?title=Issue%20on%20page%20%2FMovingCharges.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/MovingCharges.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Electrodynamics</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-1-analytical-solutions-for-a-point-charge-at-constant-velocity">Exercise 1.  Analytical Solutions for a Point Charge at Constant Velocity</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-the-scalar-potential">a.  The Scalar Potential</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#b-the-electric-field">b. The Electric Field</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-2-a-point-charges-at-a-constant-velocity-take-2">Exercise 2.   A point charges at a constant velocity (take 2)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-the-path">a. The Path</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#b-retarded-time">b.  Retarded time</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#c-the-scalar-and-vector-potentials">c. The scalar and vector potentials</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#d-electric-fields">d. Electric fields</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-2-charged-particle-on-a-ring">Exercise 2. Charged Particle on a Ring</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-charged-particle-on-a-ring">a. Charged particle on a ring</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#b-generate-the-fields">b. Generate the fields</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-3-monopole-antannea">Exercise 3.  Monopole Antannea</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-a-one-dimensional-oscillating-charge">a. A one-dimensional oscillating charge</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#b-the-field">b. The field</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-4-an-oscillating-dipole">Exercise 4.  An oscillating dipole</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-making-the-oscillating-dipole">a.  Making the oscillating dipole</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#b-the-fields">b. The fields</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="electrodynamics">
+<h1>Electrodynamics<a class="headerlink" href="#electrodynamics" title="Permalink to this heading">#</a></h1>
+<ul class="simple">
+<li><p><strong>Author:</strong></p></li>
+<li><p><strong>Date:</strong></p></li>
+<li><p><strong>Time spent on this assignment:</strong></p></li>
+</ul>
+<div class="cell tag_hide-cell docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell content</span>
+<span class="expanded">Hide code cell content</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">scipy</span>
+<span class="kn">import</span> <span class="nn">matplotlib.patches</span> <span class="k">as</span> <span class="nn">patches</span>
+<span class="kn">import</span> <span class="nn">matplotlib.colors</span> <span class="k">as</span> <span class="nn">mcl</span>
+<span class="kn">import</span> <span class="nn">warnings</span>
+<span class="kn">from</span> <span class="nn">functools</span> <span class="kn">import</span> <span class="n">partial</span>
+<span class="kn">import</span> <span class="nn">matplotlib.animation</span> <span class="k">as</span> <span class="nn">animation</span>
+<span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">HTML</span>
+<span class="k">def</span> <span class="nf">resetMe</span><span class="p">(</span><span class="n">keepList</span><span class="o">=</span><span class="p">[]):</span>
+    <span class="n">ll</span><span class="o">=%</span><span class="k">who_ls</span>
+    <span class="n">keepList</span><span class="o">=</span><span class="n">keepList</span><span class="o">+</span><span class="p">[</span><span class="s1">&#39;resetMe&#39;</span><span class="p">,</span><span class="s1">&#39;np&#39;</span><span class="p">,</span><span class="s1">&#39;plt&#39;</span><span class="p">,</span><span class="s1">&#39;math&#39;</span><span class="p">,</span><span class="s1">&#39;jax&#39;</span><span class="p">,</span><span class="s1">&#39;jnp&#39;</span><span class="p">,</span><span class="s1">&#39;jit&#39;</span><span class="p">,</span><span class="s1">&#39;grad&#39;</span><span class="p">,</span><span class="s1">&#39;HTML&#39;</span><span class="p">,</span><span class="s1">&#39;animation&#39;</span><span class="p">,</span><span class="s1">&#39;mcl&#39;</span><span class="p">,</span><span class="s1">&#39;scipy&#39;</span><span class="p">,</span><span class="s1">&#39;patches&#39;</span><span class="p">,</span><span class="s1">&#39;mcl&#39;</span><span class="p">,</span><span class="s1">&#39;warnings&#39;</span><span class="p">,</span><span class="s1">&#39;config&#39;</span><span class="p">,</span><span class="s1">&#39;partial&#39;</span><span class="p">,</span><span class="s1">&#39;datetime&#39;</span><span class="p">,</span><span class="s1">&#39;c&#39;</span><span class="p">,</span><span class="s1">&#39;epsilon0&#39;</span><span class="p">]</span>
+    <span class="k">for</span> <span class="n">iiii</span> <span class="ow">in</span> <span class="n">keepList</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">iiii</span> <span class="ow">in</span> <span class="n">ll</span><span class="p">:</span>
+            <span class="n">ll</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">iiii</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">iiii</span> <span class="ow">in</span> <span class="n">ll</span><span class="p">:</span>
+        <span class="n">jjjj</span><span class="o">=</span><span class="s2">&quot;^&quot;</span><span class="o">+</span><span class="n">iiii</span><span class="o">+</span><span class="s2">&quot;$&quot;</span>
+        <span class="o">%</span><span class="k">reset_selective</span> -f {jjjj}
+    <span class="n">ll</span><span class="o">=%</span><span class="k">who_ls</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s2">&quot;font.size&quot;</span><span class="p">:</span> <span class="mi">14</span><span class="p">})</span>
+    <span class="k">return</span>
+<span class="n">resetMe</span><span class="p">()</span>
+<span class="kn">import</span> <span class="nn">datetime</span><span class="p">;</span><span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span>
+<span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s2">&quot;ignore&quot;</span><span class="p">,</span> <span class="n">message</span><span class="o">=</span><span class="s2">&quot;RMS of&quot;</span><span class="p">,</span> <span class="n">category</span><span class="o">=</span><span class="ne">RuntimeWarning</span><span class="p">)</span>
+<span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s2">&quot;ignore&quot;</span><span class="p">,</span> <span class="n">message</span><span class="o">=</span><span class="s2">&quot;some failed to converge&quot;</span><span class="p">,</span> <span class="n">category</span><span class="o">=</span><span class="ne">RuntimeWarning</span><span class="p">)</span>
+<span class="n">epsilon0</span><span class="o">=</span><span class="mf">8.854187817e-12</span>
+<span class="n">c</span><span class="o">=</span><span class="mf">3e8</span>
+<span class="n">q</span><span class="o">=</span><span class="mf">1.6e-19</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">3</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="ne">----&gt; </span><span class="mi">3</span> <span class="kn">import</span> <span class="nn">scipy</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="kn">import</span> <span class="nn">matplotlib.patches</span> <span class="k">as</span> <span class="nn">patches</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="kn">import</span> <span class="nn">matplotlib.colors</span> <span class="k">as</span> <span class="nn">mcl</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;scipy&#39;
+</pre></div>
+</div>
+</div>
+</details>
+</div>
+<div class="cell tag_hide-cell docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell content</span>
+<span class="expanded">Hide code cell content</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">PlotScalarField</span><span class="p">(</span><span class="n">field</span><span class="p">,</span><span class="n">L</span><span class="p">):</span>
+    <span class="k">assert</span><span class="p">(</span><span class="n">field</span><span class="o">.</span><span class="n">ndim</span><span class="o">==</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">length</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">field</span><span class="p">)</span>
+    <span class="n">side_length</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">length</span><span class="p">))</span>
+    <span class="n">field_2d</span><span class="o">=</span><span class="n">field</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">side_length</span><span class="p">,</span><span class="n">side_length</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">field_2d</span><span class="p">,</span><span class="n">extent</span><span class="o">=</span><span class="p">[</span><span class="o">-</span><span class="n">L</span><span class="p">,</span><span class="n">L</span><span class="p">,</span><span class="o">-</span><span class="n">L</span><span class="p">,</span><span class="n">L</span><span class="p">],</span><span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;hsv&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">()</span>
+    <span class="k">return</span>
+
+
+<span class="k">def</span> <span class="nf">PlotField</span><span class="p">(</span><span class="n">X</span><span class="p">,</span><span class="n">Y</span><span class="p">,</span><span class="n">field</span><span class="p">,</span><span class="n">density</span><span class="o">=</span><span class="mf">2.0</span><span class="p">):</span>
+    <span class="k">assert</span><span class="p">(</span><span class="n">field</span><span class="o">.</span><span class="n">ndim</span><span class="o">==</span><span class="mi">2</span><span class="p">)</span>
+    <span class="n">length</span> <span class="o">=</span> <span class="n">field</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">side_length</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">length</span><span class="p">))</span>
+    <span class="n">field_2d</span><span class="o">=</span><span class="n">field</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">side_length</span><span class="p">,</span><span class="n">side_length</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
+    <span class="n">E_x</span><span class="o">=</span><span class="n">field_2d</span><span class="p">[:,:,</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">E_y</span><span class="o">=</span><span class="n">field_2d</span><span class="p">[:,:,</span><span class="mi">1</span><span class="p">]</span>
+    <span class="n">E_z</span><span class="o">=</span><span class="n">field_2d</span><span class="p">[:,:,</span><span class="mi">2</span><span class="p">]</span>
+    <span class="n">E_strength</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">E_x</span><span class="o">**</span><span class="mi">2</span><span class="o">+</span><span class="n">E_y</span><span class="o">**</span><span class="mi">2</span><span class="o">+</span><span class="n">E_z</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+    <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">streamplot</span><span class="p">(</span><span class="n">X</span><span class="p">,</span><span class="n">Y</span><span class="p">,</span><span class="n">E_x</span><span class="p">,</span> <span class="n">E_y</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">E_strength</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;hsv&#39;</span><span class="p">,</span> <span class="n">density</span> <span class="o">=</span> <span class="n">density</span><span class="p">,</span> <span class="n">arrowstyle</span><span class="o">=</span><span class="s1">&#39;-&gt;&#39;</span><span class="p">,</span> <span class="n">arrowsize</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+    
+    
+    
+<span class="k">def</span> <span class="nf">PlotSliceY</span><span class="p">(</span><span class="n">field</span><span class="p">,</span><span class="n">L</span><span class="p">,</span><span class="n">x</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="n">marker</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span><span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;-&#39;</span><span class="p">):</span>
+    <span class="k">assert</span><span class="p">(</span><span class="n">field</span><span class="o">.</span><span class="n">ndim</span><span class="o">==</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">length</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">field</span><span class="p">)</span>
+    <span class="n">side_length</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">length</span><span class="p">))</span>
+    <span class="n">field_2d</span><span class="o">=</span><span class="n">field</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">side_length</span><span class="p">,</span><span class="n">side_length</span><span class="p">)</span>
+    <span class="n">loc</span><span class="o">=</span><span class="nb">int</span><span class="p">((</span><span class="n">x</span><span class="o">/</span><span class="n">L</span><span class="o">+</span><span class="mf">0.5</span><span class="p">)</span><span class="o">*</span><span class="n">side_length</span><span class="p">)</span>
+    <span class="n">length</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">field_2d</span><span class="p">[</span><span class="n">loc</span><span class="p">,:])</span>   
+    <span class="n">x</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="n">L</span><span class="p">,</span><span class="n">L</span><span class="p">,</span><span class="n">length</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">field_2d</span><span class="p">[</span><span class="n">loc</span><span class="p">,:],</span><span class="n">marker</span><span class="o">=</span><span class="n">marker</span><span class="p">,</span><span class="n">linestyle</span><span class="o">=</span><span class="n">linestyle</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">PlotSliceX</span><span class="p">(</span><span class="n">field</span><span class="p">,</span><span class="n">L</span><span class="p">,</span><span class="n">x</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="n">marker</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span><span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;-&#39;</span><span class="p">):</span>
+    <span class="k">assert</span><span class="p">(</span><span class="n">field</span><span class="o">.</span><span class="n">ndim</span><span class="o">==</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">length</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">field</span><span class="p">)</span>
+    <span class="n">side_length</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">length</span><span class="p">))</span>
+    <span class="n">field_2d</span><span class="o">=</span><span class="n">field</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">side_length</span><span class="p">,</span><span class="n">side_length</span><span class="p">)</span>
+    <span class="n">loc</span><span class="o">=</span><span class="nb">int</span><span class="p">((</span><span class="n">x</span><span class="o">/</span><span class="n">L</span><span class="o">+</span><span class="mf">0.5</span><span class="p">)</span><span class="o">*</span><span class="n">side_length</span><span class="p">)</span>
+    <span class="n">length</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">field_2d</span><span class="p">[</span><span class="n">loc</span><span class="p">,:])</span>   
+    <span class="n">x</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="n">L</span><span class="p">,</span><span class="n">L</span><span class="p">,</span><span class="n">length</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">field_2d</span><span class="p">[:,</span><span class="n">loc</span><span class="p">],</span><span class="n">marker</span><span class="o">=</span><span class="n">marker</span><span class="p">,</span><span class="n">linestyle</span><span class="o">=</span><span class="n">linestyle</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">PlotPaths</span><span class="p">(</span><span class="n">r</span><span class="p">,</span><span class="n">velocity</span><span class="p">):</span>
+   <span class="n">ts</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mf">1e-8</span><span class="p">,</span><span class="mf">1e-8</span><span class="p">,</span><span class="mi">1000</span><span class="p">)</span>
+   <span class="n">fig</span><span class="p">,</span> <span class="n">axs</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+
+    <span class="c1"># Plot x(t)</span>
+   <span class="n">ax</span> <span class="o">=</span> <span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+   <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;position&#39;</span><span class="p">)</span>
+   <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ts</span><span class="p">,</span> <span class="n">r</span><span class="p">(</span><span class="n">ts</span><span class="p">)[:,</span> <span class="mi">0</span><span class="p">],</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;x&#39;</span><span class="p">,</span><span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+   <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ts</span><span class="p">,</span> <span class="n">r</span><span class="p">(</span><span class="n">ts</span><span class="p">)[:,</span> <span class="mi">1</span><span class="p">],</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;y&#39;</span><span class="p">,</span><span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+   <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;t&#39;</span><span class="p">)</span>
+   <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;position&#39;</span><span class="p">)</span>
+   <span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s1">&#39;lower right&#39;</span><span class="p">)</span>
+   <span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+
+    <span class="c1"># Plot velocity x(t)</span>
+   <span class="n">ax1</span> <span class="o">=</span> <span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+   <span class="n">ax1</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;velocity&#39;</span><span class="p">)</span>
+   <span class="n">ax1</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ts</span><span class="p">,</span> <span class="n">velocity</span><span class="p">(</span><span class="n">ts</span><span class="p">)[:,</span> <span class="mi">0</span><span class="p">],</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;v_x&#39;</span><span class="p">,</span><span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+   <span class="n">ax1</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ts</span><span class="p">,</span> <span class="n">velocity</span><span class="p">(</span><span class="n">ts</span><span class="p">)[:,</span> <span class="mi">1</span><span class="p">],</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;v_y&#39;</span><span class="p">,</span><span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+   <span class="n">ax1</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;t&#39;</span><span class="p">)</span>
+   <span class="n">ax1</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;velocity&#39;</span><span class="p">)</span>
+   <span class="n">ax1</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s1">&#39;lower right&#39;</span><span class="p">)</span>
+   <span class="n">ax1</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+
+    <span class="c1"># Plot x-y</span>
+   <span class="n">ax2</span> <span class="o">=</span> <span class="n">axs</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+   <span class="n">ax2</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">r</span><span class="p">(</span><span class="n">ts</span><span class="p">)[:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">r</span><span class="p">(</span><span class="n">ts</span><span class="p">)[:,</span> <span class="mi">1</span><span class="p">],</span><span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+   <span class="n">ax2</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
+   <span class="n">ax2</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;y&#39;</span><span class="p">)</span>
+   
+   <span class="n">ax2</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+
+    
+    <span class="c1"># Adjust layout</span>
+   <span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+   <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+
+<span class="k">def</span> <span class="nf">GetPositions</span><span class="p">(</span><span class="n">L</span><span class="p">,</span><span class="n">gridPoints</span><span class="p">):</span>
+    <span class="n">xs</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="n">L</span><span class="p">,</span><span class="n">L</span><span class="p">,</span><span class="n">gridPoints</span><span class="p">)</span>
+    <span class="n">ys</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="n">L</span><span class="p">,</span><span class="n">L</span><span class="p">,</span><span class="n">gridPoints</span><span class="p">)</span>
+    <span class="n">X</span><span class="p">,</span><span class="n">Y</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">meshgrid</span><span class="p">(</span><span class="n">xs</span><span class="p">,</span><span class="n">ys</span><span class="p">)</span>
+    <span class="n">Z</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">gridPoints</span><span class="p">,</span><span class="n">gridPoints</span><span class="p">))</span>
+    <span class="n">positions</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">vstack</span><span class="p">((</span><span class="n">X</span><span class="o">.</span><span class="n">flatten</span><span class="p">(),</span><span class="n">Y</span><span class="o">.</span><span class="n">flatten</span><span class="p">(),</span><span class="n">Z</span><span class="o">.</span><span class="n">flatten</span><span class="p">()))</span><span class="o">.</span><span class="n">T</span>
+    <span class="k">return</span> <span class="n">positions</span><span class="p">,</span><span class="n">X</span><span class="p">,</span><span class="n">Y</span>
+
+<span class="k">class</span> <span class="nc">OptMeClass</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">cost</span><span class="p">,</span><span class="n">numPositions</span><span class="p">,</span><span class="n">initial_guess</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">cost</span><span class="o">=</span><span class="n">cost</span>
+        <span class="k">if</span> <span class="n">initial_guess</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">guess</span><span class="o">=-</span><span class="mf">1e-8</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">numPositions</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">guess</span><span class="o">=</span><span class="n">initial_guess</span>
+    <span class="k">def</span> <span class="nf">Optimize</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">t0</span><span class="p">,</span><span class="n">positions</span><span class="p">,</span><span class="n">maxiter</span><span class="p">):</span>
+        <span class="n">ts</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">positions</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span><span class="o">+</span><span class="n">t0</span>
+        
+        
+        <span class="n">tr</span><span class="o">=</span><span class="n">scipy</span><span class="o">.</span><span class="n">optimize</span><span class="o">.</span><span class="n">newton</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">cost</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">guess</span><span class="p">,</span>
+                               <span class="n">args</span><span class="o">=</span><span class="p">(</span><span class="n">t0</span><span class="p">,</span> <span class="n">positions</span><span class="p">),</span> <span class="n">tol</span><span class="o">=</span><span class="mf">1e-23</span><span class="p">,</span><span class="n">maxiter</span><span class="o">=</span><span class="mi">50</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">guess</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">tr</span><span class="p">)</span><span class="o">*-</span><span class="mi">1</span>
+        <span class="n">tr</span><span class="o">=</span><span class="n">scipy</span><span class="o">.</span><span class="n">optimize</span><span class="o">.</span><span class="n">newton</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">cost</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">guess</span><span class="p">,</span>
+                        <span class="n">args</span><span class="o">=</span><span class="p">(</span><span class="n">t0</span><span class="p">,</span> <span class="n">positions</span><span class="p">),</span> <span class="n">tol</span><span class="o">=</span><span class="mf">1e-23</span><span class="p">,</span><span class="n">maxiter</span><span class="o">=</span><span class="mi">50</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">guess</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">tr</span><span class="p">)</span><span class="o">*-</span><span class="mi">1</span>
+        <span class="n">tr</span><span class="o">=</span><span class="n">scipy</span><span class="o">.</span><span class="n">optimize</span><span class="o">.</span><span class="n">newton</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">cost</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">guess</span><span class="p">,</span>
+                               <span class="n">args</span><span class="o">=</span><span class="p">(</span><span class="n">t0</span><span class="p">,</span> <span class="n">positions</span><span class="p">),</span> <span class="n">tol</span><span class="o">=</span><span class="mf">1e-23</span><span class="p">,</span><span class="n">maxiter</span><span class="o">=</span><span class="n">maxiter</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">guess</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">tr</span><span class="p">)</span><span class="o">*-</span><span class="mi">1</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Number of positive values&quot;</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">tr</span><span class="o">&gt;</span><span class="mi">0</span><span class="p">))</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Cost &quot;</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">average</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">cost</span><span class="p">(</span><span class="n">tr</span><span class="p">,</span><span class="n">t0</span><span class="p">,</span><span class="n">positions</span><span class="p">)))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">tr</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">copy</span><span class="p">(</span><span class="n">tr</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">tr</span> 
+</pre></div>
+</div>
+</div>
+</details>
+</div>
+<section id="exercise-1-analytical-solutions-for-a-point-charge-at-constant-velocity">
+<h2>Exercise 1.  Analytical Solutions for a Point Charge at Constant Velocity<a class="headerlink" href="#exercise-1-analytical-solutions-for-a-point-charge-at-constant-velocity" title="Permalink to this heading">#</a></h2>
+<p>In this exercise, we are going to write down the analytic solutions for a moving point charge.  These are easy to look up and this will give us some experience plotting a variety of scalar and vector fields.  In the next exercise, we will develop some code which produces the same results but done in a way that allows us to generalize to any (set of) moving point charges.  This more general code will then allow us to generate the field for some interesting examples such as a charge following an orbit; and an antannea.</p>
+<section id="a-the-scalar-potential">
+<h3>a.  The Scalar Potential<a class="headerlink" href="#a-the-scalar-potential" title="Permalink to this heading">#</a></h3>
+<p>The scalar potential for a point charge (source) who position is <span class="math notranslate nohighlight">\(x(t)=v t\)</span> at time <span class="math notranslate nohighlight">\(t\)</span> is</p>
+<div class="math notranslate nohighlight">
+\[
+\phi(r,t) = \frac{q}{4 \pi \epsilon_0 \sqrt{1 - \left(\frac{v}{c}\right)^2}} \cdot \frac{1}{\sqrt{\left(\frac{x - vt_s}{1 - \left(\frac{v}{c}\right)^2}\right)^2 + y^2 + z^2}}
+\]</div>
+<p>and</p>
+<div class="math notranslate nohighlight">
+\[
+A(r,t)=\frac{1}{c} \frac{q}{4\pi\epsilon_0\sqrt{1-\left(\frac{v}{c}\right)^2}}\cdot\frac{\frac{v}{c}}{\left(\frac{(x-vt_s)^2}{1-\left(\frac{v}{c}\right)^2}+y^2+z^2\right)^{1/2}}
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(r=(x,y,z)\)</span> is the position we are evaluating the potentials at.</p>
+<p>Throughout these exercises, we will want to evaluate our potentials and fields at many points - let’s say <span class="math notranslate nohighlight">\(k\)</span> points. We will be calling all our relevant functions with a variable <code class="docutils literal notranslate"><span class="pre">position</span></code> which will be a <span class="math notranslate nohighlight">\(k \times 3\)</span> numpy array which will store the three-dimensional positions.</p>
+<p>Write a function <code class="docutils literal notranslate"><span class="pre">def</span> <span class="pre">ExactPotential(positions,t)</span></code> which takes positions and returns their field values <span class="math notranslate nohighlight">\(\phi\)</span> (which should be a <span class="math notranslate nohighlight">\(k\)</span> length numpy array) and <span class="math notranslate nohighlight">\(A\)</span> (which should be a <span class="math notranslate nohighlight">\(k \times 3\)</span> length numpy array). Use a velocity of <span class="math notranslate nohighlight">\(0.9c\)</span>.  For this assignment, we will always be working in SI units. You may find it useful to use <code class="docutils literal notranslate"><span class="pre">np.vstack([A_x,A_y,A_z])</span></code></p>
+<p>The positions that we will send this function will typically be in some two-dimensional window - i.e.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+-L &amp;&lt; x &lt; L \\
+-L &amp;&lt; y &lt; L
+\end{aligned}
+\end{split}\]</div>
+<p>Here we will let <span class="math notranslate nohighlight">\(L=0.4\)</span> with a resolution of <span class="math notranslate nohighlight">\(1000 \times 1000\)</span></p>
+<p>We’ve given you a function <code class="docutils literal notranslate"><span class="pre">X,Y,positions=GetPositions(L,gridPoints)</span></code> which takes <span class="math notranslate nohighlight">\(L\)</span> and the number of gridpoints in one direction, and then returns
+both the list of <code class="docutils literal notranslate"><span class="pre">positions</span></code> but also <code class="docutils literal notranslate"><span class="pre">X</span></code> and <code class="docutils literal notranslate"><span class="pre">Y</span></code>  that will be useful for plotting vector fields.</p>
+<p>Once you have your <code class="docutils literal notranslate"><span class="pre">ExactPotential</span></code> function we will need to plot some things.  To help out with this, we’ve given you some additional useful functions above:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">PlotScalarField(field,L)</span></code> which takes the output of a scalar field (i.e. a <span class="math notranslate nohighlight">\(k\)</span> length numpy array) and plot it in the <span class="math notranslate nohighlight">\(2L \times 2L\)</span> window.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">PlotField(X,Y,field,density=2.0)</span></code> which takes the output of a vector field (i.e. a <span class="math notranslate nohighlight">\(k \times 3\)</span> numpy array) and plots field lines in the <span class="math notranslate nohighlight">\(2L \times 2L\)</span> window.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">PlotSliceX(field,L,x=0,marker=None,linestyle='-')</span></code> which takes a scalar field and L and <span class="math notranslate nohighlight">\(x\)</span> and plots the one-dimensional slice through the field at that value of <span class="math notranslate nohighlight">\(x\)</span>.</p></li>
+<li><p>There is an analogous <code class="docutils literal notranslate"><span class="pre">PlotSliceY</span></code>
+After each call to these functions, you need to call <code class="docutils literal notranslate"><span class="pre">plt.show()</span></code></p></li>
+</ul>
+<p>Using these functions, plot the logarithm of the scalar potential as well as the vector potential <span class="math notranslate nohighlight">\(A\)</span></p>
+<p>Also plot a slice through both <span class="math notranslate nohighlight">\(\phi\)</span> and <span class="math notranslate nohighlight">\(A_x\)</span> choosing <span class="math notranslate nohighlight">\(y=-0.08\)</span> and <span class="math notranslate nohighlight">\(x=-0.1\)</span> respectively.</p>
+<p>These curves will be the results you compare against later.</p>
+<div><img src="https://clark.physics.illinois.edu/246img/AnsStart.svg" width=200 align=left alt="Answer (start)"></img><br></div><div class="cell tag_hide-cell docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell content</span>
+<span class="expanded">Hide code cell content</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### answer here</span>
+</pre></div>
+</div>
+</div>
+</details>
+</div>
+<div><img src="https://clark.physics.illinois.edu/246img/AnsEnd.svg" width=200 align=left alt="Answer (end)"></img><br></div></section>
+<section id="b-the-electric-field">
+<h3>b. The Electric Field<a class="headerlink" href="#b-the-electric-field" title="Permalink to this heading">#</a></h3>
+<p>The electric field of a point charge moving at constant velocity <span class="math notranslate nohighlight">\(x=vt\)</span> is</p>
+<div class="math notranslate nohighlight">
+\[
+E_x = \frac{q}{4 \pi \epsilon_0 \sqrt{1 - (v/c)^2}} \frac{x - vt}{\left(\frac{(x - vt)^2}{1 - (v/c)^2} + y^2 + z^2\right)^{3/2}}
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+E_y = \frac{q}{4 \pi \epsilon_0 \sqrt{1 - (v/c)^2}} \frac{y}{\left(\frac{(x - vt)^2}{1 - (v/c)^2} + y^2 + z^2\right)^{3/2}}
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+E_z = \frac{q}{4 \pi \epsilon_0 \sqrt{1 - (v/c)^2}} \frac{z}{\left(\frac{(x - vt)^2}{1 - (v/c)^2} + y^2 + z^2\right)^{3/2}}
+\]</div>
+<p>Implement a function which computes this for the same positions as the scalar field and plot the electric field using <code class="docutils literal notranslate"><span class="pre">PlotField</span></code>.</p>
+<div><img src="https://clark.physics.illinois.edu/246img/AnsStart.svg" width=200 align=left alt="Answer (start)"></img><br></div><div class="cell tag_hide-cell docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell content</span>
+<span class="expanded">Hide code cell content</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### answer here</span>
+</pre></div>
+</div>
+</div>
+</details>
+</div>
+<div><img src="https://clark.physics.illinois.edu/246img/AnsEnd.svg" width=200 align=left alt="Answer (end)"></img><br></div></section>
+</section>
+<section id="exercise-2-a-point-charges-at-a-constant-velocity-take-2">
+<h2>Exercise 2.   A point charges at a constant velocity (take 2)<a class="headerlink" href="#exercise-2-a-point-charges-at-a-constant-velocity-take-2" title="Permalink to this heading">#</a></h2>
+<p>We are again going to compute the field of a particle going at constant velocity but using a more general (albeit harder) approach.</p>
+<p>Our starting point in this exercise will be the Liénard–Wiechert potential  - i.e. that the scalar and vector potential fields at position <span class="math notranslate nohighlight">\(r\)</span> and time <span class="math notranslate nohighlight">\(t\)</span> are</p>
+<div class="math notranslate nohighlight">
+\[\phi(r,t) = \frac{q}{4\pi\epsilon_0}\left(\frac{1}{(1- n\cdot \beta_s) |r-r_s|} \right)_{t_r}\]</div>
+<div class="math notranslate nohighlight">
+\[A(r,t) = \frac{\beta_s}{c}\phi(r,t)\]</div>
+<p>where <span class="math notranslate nohighlight">\(\beta_s(t)= v_s(t)/c\)</span>, <span class="math notranslate nohighlight">\(r_s\)</span> is the source location of the charge, and <span class="math notranslate nohighlight">\(n_s =\frac{r-r_s}{|r-r_s|}\)</span>. The notation <span class="math notranslate nohighlight">\((...)_{t_r}\)</span> indicates anything inside the parenthesis has to be evaluated at <strong>retarded times</strong>.  Essentially what this is telling us is that we need to (almost) use the coulomb’s law we know and love but have to assume that the field moves at the speed of light to get to you!</p>
+<p>We will devlop our code for the simplest case - a point charge moving at a constant velocity - before we turn our attention in the next exercises to more interesting cases.</p>
+<section id="a-the-path">
+<h3>a. The Path<a class="headerlink" href="#a-the-path" title="Permalink to this heading">#</a></h3>
+<p>Our point charge plots out some path in space <span class="math notranslate nohighlight">\(r(t)\)</span> at some velocity <span class="math notranslate nohighlight">\(v(t)\)</span>.  We will need to implement these two functions</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">def</span> <span class="pre">r(tr)</span></code> which takes the time <span class="math notranslate nohighlight">\(t_r\)</span> and returns the position of the electron as a three-element numpy array (i.e <code class="docutils literal notranslate"><span class="pre">[x,y,z]</span></code>).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">def</span> <span class="pre">velocity(tr)</span></code> which takes a time <span class="math notranslate nohighlight">\(t_r\)</span> and returns the velocity of the electron as a three-element numpy array (i.e <code class="docutils literal notranslate"><span class="pre">[x,y,z]</span></code>)</p></li>
+</ul>
+<p>for our moving point charges throughout this assignmet.</p>
+<p>In this problem, we will  work with a particle that is moving at a constant velocity and at the origin at <span class="math notranslate nohighlight">\(t=0\)</span> - i.e.</p>
+<div class="math notranslate nohighlight">
+\[x(t) = v t; y(t)=z(t)=0\]</div>
+<p>As in exercese 1, let the magnitude of the velocity be <span class="math notranslate nohighlight">\(|v|=0.9c\)</span></p>
+<p>To make sure you have this correct make three plots:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(x(t)\)</span> vs <span class="math notranslate nohighlight">\(t\)</span> and <span class="math notranslate nohighlight">\(y(t)\)</span> vs <span class="math notranslate nohighlight">\(t\)</span> (on the same plot)</p></li>
+<li><p><span class="math notranslate nohighlight">\(v_x(t)\)</span> vs <span class="math notranslate nohighlight">\(t\)</span> and <span class="math notranslate nohighlight">\(v_y(t)\)</span> vs <span class="math notranslate nohighlight">\(t\)</span> (on the same plot)</p></li>
+<li><p><span class="math notranslate nohighlight">\(y\)</span> vs. <span class="math notranslate nohighlight">\(x\)</span></p></li>
+</ul>
+<p>Let <span class="math notranslate nohighlight">\(-10^{-7}&lt;t&lt;10^{-7}\)</span></p>
+<p>To plot, you can do something like:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s2">&quot;x&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s2">&quot;y&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;x label&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+<div><img src="https://clark.physics.illinois.edu/246img/AnsStart.svg" width=200 align=left alt="Answer (start)"></img><br></div><div class="cell tag_hide-cell docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell content</span>
+<span class="expanded">Hide code cell content</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### answer here</span>
+</pre></div>
+</div>
+</div>
+</details>
+</div>
+<div><img src="https://clark.physics.illinois.edu/246img/AnsEnd.svg" width=200 align=left alt="Answer (end)"></img><br></div></section>
+<section id="b-retarded-time">
+<h3>b.  Retarded time<a class="headerlink" href="#b-retarded-time" title="Permalink to this heading">#</a></h3>
+<p>The potential at position <span class="math notranslate nohighlight">\((x,y)\)</span> comes from a moving point charge depends not on where the point charge is currently but depends on where the point charge was in the past - in particular, where the point charge was so that if the potential moved at the speed of light it could have reached position <span class="math notranslate nohighlight">\((x,y)\)</span>.</p>
+<p>To accomplish this, we need to figure out, given a field position and a target time <span class="math notranslate nohighlight">\(t_0\)</span>, at what (retarded) time (and hence from where) the point charge affect the field.   This is somewhat non-trivial because (letting <span class="math notranslate nohighlight">\(f\)</span> be the field position), we need to know that the time for the particle to get to <span class="math notranslate nohighlight">\(t_0\)</span> (i.e. <span class="math notranslate nohighlight">\(t_0-t_r\)</span>) and the time for light to get to the field point <span class="math notranslate nohighlight">\(f\)</span> (i.e. <span class="math notranslate nohighlight">\(|r(t_r)-f|/c\)</span>) has to be equal,</p>
+<div class="math notranslate nohighlight">
+\[\frac{|r(t_r) - f|}{c} = (t_0-t_r)\]</div>
+<p>where <span class="math notranslate nohighlight">\(t_0\)</span> is the current time and <span class="math notranslate nohighlight">\(t_r\)</span> is the target retarded time.  In other words, the field moving at the speed of light had time to get from the source to the field point.</p>
+<p>Notice that this equation depends on <span class="math notranslate nohighlight">\(t_r\)</span> both on the l.h.s. and the r.h.s.  While for a particle path <span class="math notranslate nohighlight">\(r(t_r)\)</span> there might be an analytic equation which solves for <span class="math notranslate nohighlight">\(t_r\)</span> that won’t be the case in general.  Instead, what we will do is search or optimize for a <span class="math notranslate nohighlight">\(t_r\)</span> that satisfies this equation.</p>
+<p>To do this what we will do is set up a cost function <code class="docutils literal notranslate"><span class="pre">Cost(tr,t0,p)</span></code> which takes a k-length 1-d numpy array of retarded times, a scalar <span class="math notranslate nohighlight">\(t_0\)</span> which is the instantaneous time of the source charge, and a <span class="math notranslate nohighlight">\(k  \times 3\)</span> numpy array of positions.  It should return a single scalar which is zero if the retarded times all are correct and is otherwise positive quantifying how far away they are.  In other words, the cost function tells you if you are satisifying the equation above.</p>
+<p>Then all we need to do is minimize the cost function.  If we find a <span class="math notranslate nohighlight">\(t_r\)</span> for every point that makes it zero, then we know that we have found the time at which the source particle is generating the field.</p>
+<p>You will do this optimization using the Newton-Raphson.  We’ve wrapped this in a <code class="docutils literal notranslate"><span class="pre">OptMeClass</span></code> for you, but essentially we are just calling Newton-Raphson.  The class</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">numPoints</span><span class="o">=</span><span class="n">positions</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">opt</span><span class="o">=</span><span class="n">OptMeClass</span><span class="p">(</span><span class="n">cost</span><span class="p">,</span><span class="n">numPoints</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>is initialized by giving it the cost function and the number of positions.  Then you can call it by doing</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">tr</span><span class="o">=</span><span class="n">opt</span><span class="o">.</span><span class="n">Optimize</span><span class="p">(</span><span class="n">t0</span><span class="p">,</span><span class="n">positions</span><span class="p">,</span><span class="n">maxiter</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>where <code class="docutils literal notranslate"><span class="pre">t0</span></code> is the target time, <code class="docutils literal notranslate"><span class="pre">positions</span></code> is your array of positions and <code class="docutils literal notranslate"><span class="pre">maxiter</span></code> is the maximum number of itereations (set it to 1000 typically).   It should return an array of retarded times.  It will print out the value of the cost function and the number of times that are positive (which if you’re asking it for <span class="math notranslate nohighlight">\(t_0=0\)</span> is bad because the retarded time has to be in the pas)</p>
+<p>Other then calling the Newton-Raphsody, it’s playing with the initial guesses a bit to try to help it find a reasonable answer.  I’ve tuned things to have “good” initial guesses for <span class="math notranslate nohighlight">\(t_0=0\)</span>.  If you are looking at other times (which you won’t do in this assignment), you might need to tune things differently in the class.</p>
+<p>Run this and make sure that your cost function is relatively tiny (~1-e16) and that you have no positive values of the time.</p>
+<p>Then plot the slice of time <span class="math notranslate nohighlight">\(t_r\)</span> at <span class="math notranslate nohighlight">\(y=0\)</span> You can do this using <code class="docutils literal notranslate"><span class="pre">PlotSliceY</span></code>.   It should look something like this:</p>
+<p><strong>Graph HERE</strong></p>
+<p>Here are some interesting things your should notice about the retarded time:</p>
+<ul class="simple">
+<li><p>Field positions that are at positive <span class="math notranslate nohighlight">\(x\)</span> require a retarded time that is more negative in time then other positions. That’s because these positions are further away and it therefore takes longer for light to get there.</p></li>
+<li><p>Field positions that are at the origin require no time. since that’s where the source point is.</p></li>
+<li><p>For both field positions with <span class="math notranslate nohighlight">\(x&lt;0\)</span> and <span class="math notranslate nohighlight">\(x&gt;0\)</span> the retarded time is linear as a function of <span class="math notranslate nohighlight">\(x\)</span> with separate slopes.</p></li>
+</ul>
+<div><img src="https://clark.physics.illinois.edu/246img/AnsStart.svg" width=200 align=left alt="Answer (start)"></img><br></div><div class="cell tag_hide-cell docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell content</span>
+<span class="expanded">Hide code cell content</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### answer here</span>
+</pre></div>
+</div>
+</div>
+</details>
+</div>
+<div class="cell tag_hide-cell docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell content</span>
+<span class="expanded">Hide code cell content</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### answer here</span>
+</pre></div>
+</div>
+</div>
+</details>
+</div>
+<div><img src="https://clark.physics.illinois.edu/246img/AnsEnd.svg" width=200 align=left alt="Answer (end)"></img><br></div><p>Now that you have the retarded time, we’d also like to look at which field positions correspond to which source locations.</p>
+<p>The following code plots 20 fields points (shown as x’s) and the respective source particle (shown as a solid dots) that they are connected to.  The yellow patch is the window that we are visualizing the field in.  Graph this.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
+<span class="n">numPoints</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">positions</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
+<span class="n">xCheck</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1000</span><span class="p">,</span><span class="n">size</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+<span class="n">yCheck</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1000</span><span class="p">,</span><span class="n">size</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+<span class="n">theColors</span><span class="o">=</span><span class="nb">list</span><span class="p">(</span><span class="n">mcl</span><span class="o">.</span><span class="n">BASE_COLORS</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span><span class="o">+</span><span class="nb">list</span><span class="p">(</span><span class="n">mcl</span><span class="o">.</span><span class="n">TABLEAU_COLORS</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
+<span class="n">theColors</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="s1">&#39;w&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">3</span><span class="p">):</span>
+    <span class="n">theColors</span><span class="o">=</span><span class="n">theColors</span><span class="o">+</span><span class="n">theColors</span>
+
+
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+<span class="n">rect</span> <span class="o">=</span> <span class="n">patches</span><span class="o">.</span><span class="n">Rectangle</span><span class="p">((</span><span class="o">-</span><span class="n">L</span><span class="p">,</span> <span class="o">-</span><span class="n">L</span><span class="p">),</span> <span class="mi">2</span><span class="o">*</span><span class="n">L</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">L</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">facecolor</span><span class="o">=</span><span class="s1">&#39;yellow&#39;</span><span class="p">,</span><span class="n">alpha</span><span class="o">=</span><span class="mf">0.2</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">gca</span><span class="p">()</span><span class="o">.</span><span class="n">add_patch</span><span class="p">(</span><span class="n">rect</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">xCheck</span><span class="p">)):</span>
+    <span class="n">xi</span><span class="o">=</span><span class="n">xCheck</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+    <span class="n">yi</span><span class="o">=</span><span class="n">yCheck</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+    <span class="n">fieldPosition</span><span class="o">=</span><span class="n">positions</span><span class="p">[</span><span class="n">yi</span><span class="o">*</span><span class="n">numPoints</span><span class="o">+</span><span class="n">xi</span><span class="p">]</span>
+    <span class="n">sourcePosition</span><span class="o">=</span><span class="n">r</span><span class="p">(</span><span class="n">tr</span><span class="p">[</span><span class="n">yi</span><span class="o">*</span><span class="n">numPoints</span><span class="o">+</span><span class="n">xi</span><span class="p">])</span>
+    <span class="n">dist</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">fieldPosition</span><span class="o">-</span><span class="n">sourcePosition</span><span class="p">)</span>   
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="n">fieldPosition</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">sourcePosition</span><span class="p">[</span><span class="mi">0</span><span class="p">]],[</span><span class="n">fieldPosition</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span><span class="n">sourcePosition</span><span class="p">[</span><span class="mi">1</span><span class="p">]],</span><span class="s1">&#39;-&#39;</span><span class="p">,</span><span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="o">*</span><span class="n">dist</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="n">theColors</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="n">alpha</span><span class="o">=</span><span class="mf">0.8</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="n">fieldPosition</span><span class="p">[</span><span class="mi">0</span><span class="p">]],[</span><span class="n">fieldPosition</span><span class="p">[</span><span class="mi">1</span><span class="p">]],</span><span class="n">marker</span><span class="o">=</span><span class="s1">&#39;x&#39;</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="n">theColors</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="n">markersize</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="n">sourcePosition</span><span class="p">[</span><span class="mi">0</span><span class="p">]],[</span><span class="n">sourcePosition</span><span class="p">[</span><span class="mi">1</span><span class="p">]],</span><span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="n">theColors</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="n">markersize</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="mi">0</span><span class="p">],[</span><span class="mi">0</span><span class="p">],</span><span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">,</span><span class="n">markersize</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span><span class="n">fillstyle</span><span class="o">=</span><span class="s1">&#39;none&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+<div><img src="https://clark.physics.illinois.edu/246img/AnsStart.svg" width=200 align=left alt="Answer (start)"></img><br></div><div class="cell tag_hide-cell docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell content</span>
+<span class="expanded">Hide code cell content</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### answer here</span>
+</pre></div>
+</div>
+</div>
+</details>
+</div>
+<div><img src="https://clark.physics.illinois.edu/246img/AnsEnd.svg" width=200 align=left alt="Answer (end)"></img><br></div></section>
+<section id="c-the-scalar-and-vector-potentials">
+<h3>c. The scalar and vector potentials<a class="headerlink" href="#c-the-scalar-and-vector-potentials" title="Permalink to this heading">#</a></h3>
+<p>Now let us use the Liénard–Wiechert potential equations at the beginning of this exercise along with the retarded time we’ve computed to evaluate the scalar and vector potentials. Remember that <span class="math notranslate nohighlight">\(r_s\)</span> and <span class="math notranslate nohighlight">\(v_s\)</span> are the locations of the source at the retarded times and <span class="math notranslate nohighlight">\(r\)</span> is the field position.</p>
+<p>Write a function <code class="docutils literal notranslate"><span class="pre">GetPotential(positions,t0,opt,r,v)</span></code> which takes the positions, the scalar <span class="math notranslate nohighlight">\(t0=0\)</span>, the optimization class, position function, and velocity function.  Make sure you are optimizing your retarded time locations inside this function!</p>
+<p>Check that you get the correct answer by doing the same slice that you did in exercise 1.</p>
+<div><img src="https://clark.physics.illinois.edu/246img/AnsStart.svg" width=200 align=left alt="Answer (end)"></img><br></div><div class="cell tag_hide-cell docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell content</span>
+<span class="expanded">Hide code cell content</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### answer here</span>
+</pre></div>
+</div>
+</div>
+</details>
+</div>
+<div><img src="https://clark.physics.illinois.edu/246img/AnsEnd.svg" width=200 align=left alt="Answer (end)"></img><br></div></section>
+<section id="d-electric-fields">
+<h3>d. Electric fields<a class="headerlink" href="#d-electric-fields" title="Permalink to this heading">#</a></h3>
+<p>Now we want to compute the electric field.</p>
+<p>The electric field is</p>
+<div class="math notranslate nohighlight">
+\[ 
+E=-\nabla \phi - \frac{\partial A}{\partial t}
+\]</div>
+<p>To compute this, we need to take the derivative of the scalar field <span class="math notranslate nohighlight">\(\phi\)</span> with respect to the x,y, and z terms in the positions and the derivative of the vector potential with respect to time.</p>
+<p>We will take these using finite differences.    For example,</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{\partial \phi}{\partial x}=\frac{\phi(x+\delta,y,z)-\phi(x-\delta,y,z)}{2\delta}
+\]</div>
+<p>Using our <code class="docutils literal notranslate"><span class="pre">GetPotential</span></code> function we can compute both the terms in this fraction and thereby evaluate the derivative.  You can do this for all six derivatives you need.</p>
+<p>Use <span class="math notranslate nohighlight">\(\delta x=\delta y = \delta z = 10^{-13}\)</span> and <span class="math notranslate nohighlight">\(\delta t=10^{-21}\)</span>.</p>
+<p>Write a <code class="docutils literal notranslate"><span class="pre">GetFields(positions,t0,opt,r,v)</span></code> function which takes the positions, the target time <span class="math notranslate nohighlight">\(t_0\)</span>, and the optimization class, position function, and velocity function and returns the fields.</p>
+<p>Plot the electric field.</p>
+<p>Verify that you are getting the correct results by comparing with the exact answer.</p>
+<p>There are a couple interesting things you might notice:</p>
+<ul class="simple">
+<li><p>The contraction of the field lines is coming from special relativity (despite us not putting in any special relativity)</p></li>
+<li><p>Amazingly, despite the field values all coming form the source at different points, the field lines emanate from the current source location.  This is really pretty crazy/amazing.</p></li>
+</ul>
+<div><img src="https://clark.physics.illinois.edu/246img/AnsStart.svg" width=200 align=left alt="Answer (start)"></img><br></div><div class="cell tag_hide-cell docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell content</span>
+<span class="expanded">Hide code cell content</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### answer here</span>
+</pre></div>
+</div>
+</div>
+</details>
+</div>
+<div class="cell tag_hide-cell docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell content</span>
+<span class="expanded">Hide code cell content</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### answer here</span>
+</pre></div>
+</div>
+</div>
+</details>
+</div>
+<div><img src="https://clark.physics.illinois.edu/246img/AnsEnd.svg" width=200 align=left alt="Answer (end)"></img><br></div></section>
+</section>
+<section id="exercise-2-charged-particle-on-a-ring">
+<h2>Exercise 2. Charged Particle on a Ring<a class="headerlink" href="#exercise-2-charged-particle-on-a-ring" title="Permalink to this heading">#</a></h2>
+<p>In this exercise, we can use essentially all the same code while calculating the field of a charged particle on a ring.</p>
+<section id="a-charged-particle-on-a-ring">
+<h3>a. Charged particle on a ring<a class="headerlink" href="#a-charged-particle-on-a-ring" title="Permalink to this heading">#</a></h3>
+<p>In the previous exercise we considered a particle moving at a constant velocity.  Here let’s consider a particle moving on a ring of radius <span class="math notranslate nohighlight">\(r=0.1\)</span> at a velocity whose magnitude is 0.9c.    Write your path functions <code class="docutils literal notranslate"><span class="pre">r(t)</span></code> and <code class="docutils literal notranslate"><span class="pre">v(t)</span></code>.   Again plot</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(x(t)\)</span> vs <span class="math notranslate nohighlight">\(t\)</span> and <span class="math notranslate nohighlight">\(y(t)\)</span> vs <span class="math notranslate nohighlight">\(t\)</span> (on the same plot)</p></li>
+<li><p><span class="math notranslate nohighlight">\(v_x(t)\)</span> vs <span class="math notranslate nohighlight">\(t\)</span> and <span class="math notranslate nohighlight">\(v_y(t)\)</span> vs <span class="math notranslate nohighlight">\(t\)</span> (on the same plot)</p></li>
+<li><p><span class="math notranslate nohighlight">\(y\)</span> vs. <span class="math notranslate nohighlight">\(x\)</span></p></li>
+</ul>
+<p>Let <span class="math notranslate nohighlight">\(-10^{-8}&lt;t&lt;10^{-8}\)</span></p>
+<p>Using the same window and resolution</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">L</span><span class="o">=</span><span class="mf">0.4</span>
+<span class="n">numPoints</span><span class="o">=</span><span class="mi">1000</span>
+<span class="n">positions</span><span class="p">,</span><span class="n">X</span><span class="p">,</span><span class="n">Y</span><span class="o">=</span><span class="n">GetPositions</span><span class="p">(</span><span class="n">L</span><span class="p">,</span><span class="n">numPoints</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>find the retarded time for these positions and (copying down the code from earlier) plot the connection between field lines and source particle locations for 20 random field locations.</p>
+<div><img src="https://clark.physics.illinois.edu/246img/AnsStart.svg" width=200 align=left alt="Answer (start)"></img><br></div><div class="cell tag_hide-cell docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell content</span>
+<span class="expanded">Hide code cell content</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### answer here</span>
+</pre></div>
+</div>
+</div>
+</details>
+</div>
+<div class="cell tag_hide-cell docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell content</span>
+<span class="expanded">Hide code cell content</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### answer here</span>
+</pre></div>
+</div>
+</div>
+</details>
+</div>
+<div><img src="https://clark.physics.illinois.edu/246img/AnsEnd.svg" width=200 align=left alt="Answer (end)"></img><br></div></section>
+<section id="b-generate-the-fields">
+<h3>b. Generate the fields<a class="headerlink" href="#b-generate-the-fields" title="Permalink to this heading">#</a></h3>
+<p>Once you have the path you should be able to call your <code class="docutils literal notranslate"><span class="pre">GetFields</span></code> function to get the field lines again.  Plot these field lines using <code class="docutils literal notranslate"><span class="pre">PlotField</span></code> but before you call <code class="docutils literal notranslate"><span class="pre">plt.show()</span></code> it’s worth adding a circle of radius 0.1 so you can see where the particle is circling</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">circle</span> <span class="o">=</span> <span class="n">patches</span><span class="o">.</span><span class="n">Circle</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="mf">0.1</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">facecolor</span><span class="o">=</span><span class="s1">&#39;none&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">gca</span><span class="p">()</span><span class="o">.</span><span class="n">add_patch</span><span class="p">(</span><span class="n">circle</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>In addition, it’s instructive (and cool-looking) to plot a scalar field separately of the field strength <code class="docutils literal notranslate"><span class="pre">E_strength=np.log(E[:,0]**2+E[:,1]**2+E[:,2]**2)</span></code>.  Go ahead and do this.</p>
+<div><img src="https://clark.physics.illinois.edu/246img/AnsStart.svg" width=200 align=left alt="Answer (start)"></img><br></div><div class="cell tag_hide-cell docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell content</span>
+<span class="expanded">Hide code cell content</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### answer here</span>
+</pre></div>
+</div>
+</div>
+</details>
+</div>
+<div class="cell tag_hide-cell docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell content</span>
+<span class="expanded">Hide code cell content</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### answer here</span>
+</pre></div>
+</div>
+</div>
+</details>
+</div>
+<div><img src="https://clark.physics.illinois.edu/246img/AnsEnd.svg" width=200 align=left alt="Answer (edn)"></img><br></div></section>
+</section>
+<section id="exercise-3-monopole-antannea">
+<h2>Exercise 3.  Monopole Antannea<a class="headerlink" href="#exercise-3-monopole-antannea" title="Permalink to this heading">#</a></h2>
+<section id="a-a-one-dimensional-oscillating-charge">
+<h3>a. A one-dimensional oscillating charge<a class="headerlink" href="#a-a-one-dimensional-oscillating-charge" title="Permalink to this heading">#</a></h3>
+<p>Instead of a particle orbitting a ring of charge, let’s instead do a charge oscillating back and forth in the x-direction as <span class="math notranslate nohighlight">\(x(t) = 0.1 \cos (t v)\)</span> where <span class="math notranslate nohighlight">\(v=9c\)</span></p>
+<p>Again plot</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(x(t)\)</span> vs <span class="math notranslate nohighlight">\(t\)</span> and <span class="math notranslate nohighlight">\(y(t)\)</span> vs <span class="math notranslate nohighlight">\(t\)</span> (on the same plot)</p></li>
+<li><p><span class="math notranslate nohighlight">\(v_x(t)\)</span> vs <span class="math notranslate nohighlight">\(t\)</span> and <span class="math notranslate nohighlight">\(v_y(t)\)</span> vs <span class="math notranslate nohighlight">\(t\)</span> (on the same plot)</p></li>
+<li><p><span class="math notranslate nohighlight">\(y\)</span> vs. <span class="math notranslate nohighlight">\(x\)</span></p></li>
+</ul>
+<p>Let <span class="math notranslate nohighlight">\(-10^{-8}&lt;t&lt;10^{-8}\)</span></p>
+<p>Make sure the velocity is correct.</p>
+<div><img src="https://clark.physics.illinois.edu/246img/AnsStart.svg" width=200 align=left alt="Answer (edn)"></img><br></div><div class="cell tag_hide-cell docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell content</span>
+<span class="expanded">Hide code cell content</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### answer here</span>
+</pre></div>
+</div>
+</div>
+</details>
+</div>
+<div class="cell tag_hide-cell docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell content</span>
+<span class="expanded">Hide code cell content</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### answer here</span>
+</pre></div>
+</div>
+</div>
+</details>
+</div>
+<div><img src="https://clark.physics.illinois.edu/246img/AnsEnd.svg" width=200 align=left alt="Answer (edn)"></img><br></div></section>
+<section id="b-the-field">
+<h3>b. The field<a class="headerlink" href="#b-the-field" title="Permalink to this heading">#</a></h3>
+<p>Now let’s generate the field.  Here it will look better if we use a window with <span class="math notranslate nohighlight">\(L=2\)</span> - i.e.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">L</span><span class="o">=</span><span class="mi">2</span>
+<span class="n">numPoints</span><span class="o">=</span><span class="mi">1000</span>
+<span class="n">positions</span><span class="p">,</span><span class="n">X</span><span class="p">,</span><span class="n">Y</span><span class="o">=</span><span class="n">GetPositions</span><span class="p">(</span><span class="n">L</span><span class="p">,</span><span class="n">numPoints</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Go ahead and generate the field plotting it as well as seprately the scalar field of the logarithm of the field strength.  I get nicer results for my fields if I use a <code class="docutils literal notranslate"><span class="pre">density=4.0</span></code> in the call to <code class="docutils literal notranslate"><span class="pre">GetFields</span></code></p>
+<div><img src="https://clark.physics.illinois.edu/246img/AnsStart.svg" width=200 align=left alt="Answer (start)"></img><br></div><div class="cell tag_hide-cell docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell content</span>
+<span class="expanded">Hide code cell content</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### answer here</span>
+</pre></div>
+</div>
+</div>
+</details>
+</div>
+<div class="cell tag_hide-cell docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell content</span>
+<span class="expanded">Hide code cell content</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### answer here</span>
+</pre></div>
+</div>
+</div>
+</details>
+</div>
+<div><img src="https://clark.physics.illinois.edu/246img/AnsEnd.svg" width=200 align=left alt="Answer (edn)"></img><br></div></section>
+</section>
+<section id="exercise-4-an-oscillating-dipole">
+<h2>Exercise 4.  An oscillating dipole<a class="headerlink" href="#exercise-4-an-oscillating-dipole" title="Permalink to this heading">#</a></h2>
+<section id="a-making-the-oscillating-dipole">
+<h3>a.  Making the oscillating dipole<a class="headerlink" href="#a-making-the-oscillating-dipole" title="Permalink to this heading">#</a></h3>
+<p>Finally, we’d like to do an oscillating dipole. An oscillating dipole has two charges of different signs which pass back and forth by each other - i.e. the positive charge is doing <span class="math notranslate nohighlight">\(x(t) = 0.1 \cos (t v)\)</span>  while the negative charge is doing <span class="math notranslate nohighlight">\(x(t) = -0.1 \cos (t v)\)</span>.</p>
+<p>Define two functions <code class="docutils literal notranslate"><span class="pre">rA</span></code> and <code class="docutils literal notranslate"><span class="pre">rB</span></code> and their respective <code class="docutils literal notranslate"><span class="pre">vA</span></code> and <code class="docutils literal notranslate"><span class="pre">vB</span></code> and plot the relevant quantities to make sure that they look right.</p>
+<div><img src="https://clark.physics.illinois.edu/246img/AnsStart.svg" width=200 align=left alt="Answer (start)"></img><br></div><div class="cell tag_hide-cell docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell content</span>
+<span class="expanded">Hide code cell content</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### answer here</span>
+</pre></div>
+</div>
+</div>
+</details>
+</div>
+<div><img src="https://clark.physics.illinois.edu/246img/AnsEnd.svg" width=200 align=left alt="Answer (end)"></img><br></div></section>
+<section id="b-the-fields">
+<h3>b. The fields<a class="headerlink" href="#b-the-fields" title="Permalink to this heading">#</a></h3>
+<p>This will actually require a little bit of change to your code.  Potentials add but fields don’t.  So in GetFields you will need to call the potential twice and add it before taking the derivatives.</p>
+<p>The changes to the code that I needed:</p>
+<ul class="simple">
+<li><p>cost function now takes a position function <code class="docutils literal notranslate"><span class="pre">r</span></code> - i.e. <code class="docutils literal notranslate"><span class="pre">cost(r,tr,t0,p)</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">GetFields</span></code> wants to define two optimization functions, <code class="docutils literal notranslate"><span class="pre">optA</span></code> and <code class="docutils literal notranslate"><span class="pre">optB</span></code> which take two different cost functions:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">partial(cost,rA)</span></code> and <code class="docutils literal notranslate"><span class="pre">partial(cost,rB)</span></code></p></li>
+</ul>
+</li>
+<li><p>In <code class="docutils literal notranslate"><span class="pre">GetFields</span></code>, you have to call the potential twice and add them.  Each potential gets called with its own optimization function, position function, and velocity function. Remember to pay attention to the sign of the charge (which can be implemented by just “subtracting” the two potentials)</p></li>
+</ul>
+<p>Once you’ve made these modification you should be able to use the rest of your code as is to produce the fields.  Use here <span class="math notranslate nohighlight">\(L=4\)</span></p>
+<div><img src="https://clark.physics.illinois.edu/246img/AnsStart.svg" width=200 align=left alt="Answer (start)"></img><br></div><div class="cell tag_hide-cell docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell content</span>
+<span class="expanded">Hide code cell content</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### answer here</span>
+</pre></div>
+</div>
+</div>
+</details>
+</div>
+<div class="cell tag_hide-cell docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell content</span>
+<span class="expanded">Hide code cell content</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### answer here</span>
+</pre></div>
+</div>
+</div>
+</details>
+</div>
+<div><img src="https://clark.physics.illinois.edu/246img/AnsEnd.svg" width=200 align=left alt="Answer (end)"></img><br></div></section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="Electrostatics.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Electrostatics</p>
+      </div>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-1-analytical-solutions-for-a-point-charge-at-constant-velocity">Exercise 1.  Analytical Solutions for a Point Charge at Constant Velocity</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-the-scalar-potential">a.  The Scalar Potential</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#b-the-electric-field">b. The Electric Field</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-2-a-point-charges-at-a-constant-velocity-take-2">Exercise 2.   A point charges at a constant velocity (take 2)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-the-path">a. The Path</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#b-retarded-time">b.  Retarded time</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#c-the-scalar-and-vector-potentials">c. The scalar and vector potentials</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#d-electric-fields">d. Electric fields</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-2-charged-particle-on-a-ring">Exercise 2. Charged Particle on a Ring</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-charged-particle-on-a-ring">a. Charged particle on a ring</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#b-generate-the-fields">b. Generate the fields</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-3-monopole-antannea">Exercise 3.  Monopole Antannea</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-a-one-dimensional-oscillating-charge">a. A one-dimensional oscillating charge</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#b-the-field">b. The field</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-4-an-oscillating-dipole">Exercise 4.  An oscillating dipole</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-making-the-oscillating-dipole">a.  Making the oscillating dipole</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#b-the-fields">b. The fields</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Bryan Clark
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2024.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
