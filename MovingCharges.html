@@ -396,12 +396,7 @@ document.write(`
 <li><p><strong>Date:</strong></p></li>
 <li><p><strong>Time spent on this assignment:</strong></p></li>
 </ul>
-<div class="cell tag_hide-cell docutils container">
-<details class="hide above-input">
-<summary aria-label="Toggle hidden content">
-<span class="collapsed">Show code cell content</span>
-<span class="expanded">Hide code cell content</span>
-</summary>
+<div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
@@ -448,7 +443,6 @@ document.write(`
 </pre></div>
 </div>
 </div>
-</details>
 </div>
 <div class="cell tag_hide-cell docutils container">
 <details class="hide above-input">
@@ -457,7 +451,18 @@ document.write(`
 <span class="expanded">Hide code cell content</span>
 </summary>
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">PlotScalarField</span><span class="p">(</span><span class="n">field</span><span class="p">,</span><span class="n">L</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">GetPositions</span><span class="p">(</span><span class="n">L</span><span class="p">,</span><span class="n">gridPoints</span><span class="p">,</span><span class="n">returnMesh</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+    <span class="n">xs</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="n">L</span><span class="p">,</span><span class="n">L</span><span class="p">,</span><span class="n">gridPoints</span><span class="p">)</span>
+    <span class="n">ys</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="n">L</span><span class="p">,</span><span class="n">L</span><span class="p">,</span><span class="n">gridPoints</span><span class="p">)</span>
+    <span class="n">X</span><span class="p">,</span><span class="n">Y</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">meshgrid</span><span class="p">(</span><span class="n">xs</span><span class="p">,</span><span class="n">ys</span><span class="p">)</span>
+    <span class="n">Z</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">gridPoints</span><span class="p">,</span><span class="n">gridPoints</span><span class="p">))</span>
+    <span class="n">positions</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">vstack</span><span class="p">((</span><span class="n">X</span><span class="o">.</span><span class="n">flatten</span><span class="p">(),</span><span class="n">Y</span><span class="o">.</span><span class="n">flatten</span><span class="p">(),</span><span class="n">Z</span><span class="o">.</span><span class="n">flatten</span><span class="p">()))</span><span class="o">.</span><span class="n">T</span>
+    <span class="k">if</span> <span class="n">returnMesh</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">positions</span><span class="p">,</span><span class="n">X</span><span class="p">,</span><span class="n">Y</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">positions</span>
+
+<span class="k">def</span> <span class="nf">PlotScalarField</span><span class="p">(</span><span class="n">field</span><span class="p">,</span><span class="n">L</span><span class="p">):</span>
     <span class="k">assert</span><span class="p">(</span><span class="n">field</span><span class="o">.</span><span class="n">ndim</span><span class="o">==</span><span class="mi">1</span><span class="p">)</span>
     <span class="n">length</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">field</span><span class="p">)</span>
     <span class="n">side_length</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">length</span><span class="p">))</span>
@@ -467,10 +472,12 @@ document.write(`
     <span class="k">return</span>
 
 
-<span class="k">def</span> <span class="nf">PlotField</span><span class="p">(</span><span class="n">X</span><span class="p">,</span><span class="n">Y</span><span class="p">,</span><span class="n">field</span><span class="p">,</span><span class="n">density</span><span class="o">=</span><span class="mf">2.0</span><span class="p">):</span>
+<span class="k">def</span> <span class="nf">PlotField</span><span class="p">(</span><span class="n">field</span><span class="p">,</span><span class="n">L</span><span class="p">,</span><span class="n">density</span><span class="o">=</span><span class="mf">2.0</span><span class="p">):</span>
     <span class="k">assert</span><span class="p">(</span><span class="n">field</span><span class="o">.</span><span class="n">ndim</span><span class="o">==</span><span class="mi">2</span><span class="p">)</span>
     <span class="n">length</span> <span class="o">=</span> <span class="n">field</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
     <span class="n">side_length</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">length</span><span class="p">))</span>
+    <span class="c1">#print(&quot;side legnth is &quot;,side_length)</span>
+    <span class="n">_</span><span class="p">,</span><span class="n">X</span><span class="p">,</span><span class="n">Y</span><span class="o">=</span><span class="n">GetPositions</span><span class="p">(</span><span class="n">L</span><span class="p">,</span><span class="n">side_length</span><span class="p">,</span><span class="kc">True</span><span class="p">)</span>
     <span class="n">field_2d</span><span class="o">=</span><span class="n">field</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">side_length</span><span class="p">,</span><span class="n">side_length</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
     <span class="n">E_x</span><span class="o">=</span><span class="n">field_2d</span><span class="p">[:,:,</span><span class="mi">0</span><span class="p">]</span>
     <span class="n">E_y</span><span class="o">=</span><span class="n">field_2d</span><span class="p">[:,:,</span><span class="mi">1</span><span class="p">]</span>
@@ -501,60 +508,18 @@ document.write(`
     <span class="n">x</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="n">L</span><span class="p">,</span><span class="n">L</span><span class="p">,</span><span class="n">length</span><span class="p">)</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">field_2d</span><span class="p">[:,</span><span class="n">loc</span><span class="p">],</span><span class="n">marker</span><span class="o">=</span><span class="n">marker</span><span class="p">,</span><span class="n">linestyle</span><span class="o">=</span><span class="n">linestyle</span><span class="p">)</span>
 
-<span class="k">def</span> <span class="nf">PlotPaths</span><span class="p">(</span><span class="n">r</span><span class="p">,</span><span class="n">velocity</span><span class="p">):</span>
-   <span class="n">ts</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mf">1e-8</span><span class="p">,</span><span class="mf">1e-8</span><span class="p">,</span><span class="mi">1000</span><span class="p">)</span>
-   <span class="n">fig</span><span class="p">,</span> <span class="n">axs</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
-
-    <span class="c1"># Plot x(t)</span>
-   <span class="n">ax</span> <span class="o">=</span> <span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-   <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;position&#39;</span><span class="p">)</span>
-   <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ts</span><span class="p">,</span> <span class="n">r</span><span class="p">(</span><span class="n">ts</span><span class="p">)[:,</span> <span class="mi">0</span><span class="p">],</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;x&#39;</span><span class="p">,</span><span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
-   <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ts</span><span class="p">,</span> <span class="n">r</span><span class="p">(</span><span class="n">ts</span><span class="p">)[:,</span> <span class="mi">1</span><span class="p">],</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;y&#39;</span><span class="p">,</span><span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
-   <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;t&#39;</span><span class="p">)</span>
-   <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;position&#39;</span><span class="p">)</span>
-   <span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s1">&#39;lower right&#39;</span><span class="p">)</span>
-   <span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
-
-    <span class="c1"># Plot velocity x(t)</span>
-   <span class="n">ax1</span> <span class="o">=</span> <span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
-   <span class="n">ax1</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;velocity&#39;</span><span class="p">)</span>
-   <span class="n">ax1</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ts</span><span class="p">,</span> <span class="n">velocity</span><span class="p">(</span><span class="n">ts</span><span class="p">)[:,</span> <span class="mi">0</span><span class="p">],</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;v_x&#39;</span><span class="p">,</span><span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
-   <span class="n">ax1</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ts</span><span class="p">,</span> <span class="n">velocity</span><span class="p">(</span><span class="n">ts</span><span class="p">)[:,</span> <span class="mi">1</span><span class="p">],</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;v_y&#39;</span><span class="p">,</span><span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
-   <span class="n">ax1</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;t&#39;</span><span class="p">)</span>
-   <span class="n">ax1</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;velocity&#39;</span><span class="p">)</span>
-   <span class="n">ax1</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s1">&#39;lower right&#39;</span><span class="p">)</span>
-   <span class="n">ax1</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
-
-    <span class="c1"># Plot x-y</span>
-   <span class="n">ax2</span> <span class="o">=</span> <span class="n">axs</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
-   <span class="n">ax2</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">r</span><span class="p">(</span><span class="n">ts</span><span class="p">)[:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">r</span><span class="p">(</span><span class="n">ts</span><span class="p">)[:,</span> <span class="mi">1</span><span class="p">],</span><span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
-   <span class="n">ax2</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
-   <span class="n">ax2</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;y&#39;</span><span class="p">)</span>
-   
-   <span class="n">ax2</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
-
-    
-    <span class="c1"># Adjust layout</span>
-   <span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
-   <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 
 
-<span class="k">def</span> <span class="nf">GetPositions</span><span class="p">(</span><span class="n">L</span><span class="p">,</span><span class="n">gridPoints</span><span class="p">):</span>
-    <span class="n">xs</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="n">L</span><span class="p">,</span><span class="n">L</span><span class="p">,</span><span class="n">gridPoints</span><span class="p">)</span>
-    <span class="n">ys</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="n">L</span><span class="p">,</span><span class="n">L</span><span class="p">,</span><span class="n">gridPoints</span><span class="p">)</span>
-    <span class="n">X</span><span class="p">,</span><span class="n">Y</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">meshgrid</span><span class="p">(</span><span class="n">xs</span><span class="p">,</span><span class="n">ys</span><span class="p">)</span>
-    <span class="n">Z</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">gridPoints</span><span class="p">,</span><span class="n">gridPoints</span><span class="p">))</span>
-    <span class="n">positions</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">vstack</span><span class="p">((</span><span class="n">X</span><span class="o">.</span><span class="n">flatten</span><span class="p">(),</span><span class="n">Y</span><span class="o">.</span><span class="n">flatten</span><span class="p">(),</span><span class="n">Z</span><span class="o">.</span><span class="n">flatten</span><span class="p">()))</span><span class="o">.</span><span class="n">T</span>
-    <span class="k">return</span> <span class="n">positions</span><span class="p">,</span><span class="n">X</span><span class="p">,</span><span class="n">Y</span>
 
 <span class="k">class</span> <span class="nc">OptMeClass</span><span class="p">:</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">cost</span><span class="p">,</span><span class="n">numPositions</span><span class="p">,</span><span class="n">initial_guess</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">cost</span><span class="o">=</span><span class="n">cost</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">cost</span><span class="p">,</span><span class="n">numPositions</span><span class="p">,</span><span class="n">r</span><span class="p">,</span><span class="n">initial_guess</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">cost</span><span class="o">=</span> <span class="n">partial</span><span class="p">(</span><span class="n">cost</span><span class="p">,</span> <span class="n">r</span><span class="p">)</span>
         <span class="k">if</span> <span class="n">initial_guess</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">guess</span><span class="o">=-</span><span class="mf">1e-8</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">numPositions</span><span class="p">)</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">guess</span><span class="o">=</span><span class="n">initial_guess</span>
-    <span class="k">def</span> <span class="nf">Optimize</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">t0</span><span class="p">,</span><span class="n">positions</span><span class="p">,</span><span class="n">maxiter</span><span class="p">):</span>
+
+    <span class="k">def</span> <span class="nf">Optimize</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">t0</span><span class="p">,</span><span class="n">positions</span><span class="p">,</span><span class="n">maxiter</span><span class="o">=</span><span class="mi">1000</span><span class="p">):</span>
         <span class="n">ts</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">positions</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span><span class="o">+</span><span class="n">t0</span>
         
         
@@ -593,7 +558,14 @@ A(r,t)=\frac{1}{c} \frac{q}{4\pi\epsilon_0\sqrt{1-\left(\frac{v}{c}\right)^2}}\c
 \]</div>
 <p>where <span class="math notranslate nohighlight">\(r=(x,y,z)\)</span> is the position we are evaluating the potentials at.</p>
 <p>Throughout these exercises, we will want to evaluate our potentials and fields at many points - let’s say <span class="math notranslate nohighlight">\(k\)</span> points. We will be calling all our relevant functions with a variable <code class="docutils literal notranslate"><span class="pre">position</span></code> which will be a <span class="math notranslate nohighlight">\(k \times 3\)</span> numpy array which will store the three-dimensional positions.</p>
-<p>Write a function <code class="docutils literal notranslate"><span class="pre">def</span> <span class="pre">ExactPotential(positions,t)</span></code> which takes positions and returns their field values <span class="math notranslate nohighlight">\(\phi\)</span> (which should be a <span class="math notranslate nohighlight">\(k\)</span> length numpy array) and <span class="math notranslate nohighlight">\(A\)</span> (which should be a <span class="math notranslate nohighlight">\(k \times 3\)</span> length numpy array). Use a velocity of <span class="math notranslate nohighlight">\(0.9c\)</span>.  For this assignment, we will always be working in SI units. You may find it useful to use <code class="docutils literal notranslate"><span class="pre">np.vstack([A_x,A_y,A_z])</span></code></p>
+<p>Write a function <code class="docutils literal notranslate"><span class="pre">def</span> <span class="pre">ExactPotential(positions,t)</span></code> which takes positions and returns their field values <span class="math notranslate nohighlight">\(\phi\)</span> (which should be a <span class="math notranslate nohighlight">\(k\)</span> length numpy array) and <span class="math notranslate nohighlight">\(A\)</span> (which should be a <span class="math notranslate nohighlight">\(k \times 3\)</span> length numpy array). Use a velocity of <span class="math notranslate nohighlight">\(0.9c\)</span>.  For this assignment, we will always be working in SI units. You may find it useful to use `np.vstack([A_x,A_y,A_z]) on three <span class="math notranslate nohighlight">\(k\)</span> length arrays to get your <span class="math notranslate nohighlight">\(k \times 3\)</span> array.</p>
+<p>You may find the following functions useful:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">x=positions[:,0]</span></code> will get your x positions</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">np.sqrt(...)</span></code> will take a square root</p></li>
+<li><p>to get <span class="math notranslate nohighlight">\(x^{3/2}\)</span> you can take <code class="docutils literal notranslate"><span class="pre">x**(3/2)</span></code></p></li>
+<li><p>you don’t need to loop over your arrays. You can just multiply them by each other and scalars.</p></li>
+</ul>
 <p>The positions that we will send this function will typically be in some two-dimensional window - i.e.</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
@@ -603,12 +575,12 @@ A(r,t)=\frac{1}{c} \frac{q}{4\pi\epsilon_0\sqrt{1-\left(\frac{v}{c}\right)^2}}\c
 \end{aligned}
 \end{split}\]</div>
 <p>Here we will let <span class="math notranslate nohighlight">\(L=0.4\)</span> with a resolution of <span class="math notranslate nohighlight">\(1000 \times 1000\)</span></p>
-<p>We’ve given you a function <code class="docutils literal notranslate"><span class="pre">X,Y,positions=GetPositions(L,gridPoints)</span></code> which takes <span class="math notranslate nohighlight">\(L\)</span> and the number of gridpoints in one direction, and then returns
-both the list of <code class="docutils literal notranslate"><span class="pre">positions</span></code> but also <code class="docutils literal notranslate"><span class="pre">X</span></code> and <code class="docutils literal notranslate"><span class="pre">Y</span></code>  that will be useful for plotting vector fields.</p>
+<p>We’ve given you a function <code class="docutils literal notranslate"><span class="pre">positions=GetPositions(L,gridPoints)</span></code> which takes <span class="math notranslate nohighlight">\(L\)</span> and the number of gridpoints in one direction, and then returns
+the list of <code class="docutils literal notranslate"><span class="pre">positions</span></code> that will be useful for plotting vector fields.</p>
 <p>Once you have your <code class="docutils literal notranslate"><span class="pre">ExactPotential</span></code> function we will need to plot some things.  To help out with this, we’ve given you some additional useful functions above:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">PlotScalarField(field,L)</span></code> which takes the output of a scalar field (i.e. a <span class="math notranslate nohighlight">\(k\)</span> length numpy array) and plot it in the <span class="math notranslate nohighlight">\(2L \times 2L\)</span> window.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">PlotField(X,Y,field,density=2.0)</span></code> which takes the output of a vector field (i.e. a <span class="math notranslate nohighlight">\(k \times 3\)</span> numpy array) and plots field lines in the <span class="math notranslate nohighlight">\(2L \times 2L\)</span> window.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">PlotField(field,L,density=2.0)</span></code> which takes the output of a vector field (i.e. a <span class="math notranslate nohighlight">\(k \times 3\)</span> numpy array) and plots field lines in the <span class="math notranslate nohighlight">\(2L \times 2L\)</span> window.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">PlotSliceX(field,L,x=0,marker=None,linestyle='-')</span></code> which takes a scalar field and L and <span class="math notranslate nohighlight">\(x\)</span> and plots the one-dimensional slice through the field at that value of <span class="math notranslate nohighlight">\(x\)</span>.</p></li>
 <li><p>There is an analogous <code class="docutils literal notranslate"><span class="pre">PlotSliceY</span></code>
 After each call to these functions, you need to call <code class="docutils literal notranslate"><span class="pre">plt.show()</span></code></p></li>
@@ -623,7 +595,31 @@ After each call to these functions, you need to call <code class="docutils liter
 <span class="expanded">Hide code cell content</span>
 </summary>
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### answer here</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">GetExactPotential</span><span class="p">(</span><span class="n">positions</span><span class="p">,</span><span class="n">t</span><span class="p">,</span><span class="n">v</span><span class="p">):</span>
+    <span class="n">x</span><span class="o">=</span><span class="n">positions</span><span class="p">[:,</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">y</span><span class="o">=</span><span class="n">positions</span><span class="p">[:,</span><span class="mi">1</span><span class="p">]</span>    
+    <span class="n">z</span><span class="o">=</span><span class="n">positions</span><span class="p">[:,</span><span class="mi">2</span><span class="p">]</span>    
+    <span class="n">correct_phi</span><span class="o">=</span> <span class="c1">#...</span>
+    <span class="n">Ax_correct</span> <span class="o">=</span><span class="c1">#...</span>
+    <span class="n">correct_A</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">vstack</span><span class="p">((</span><span class="n">Ax_correct</span><span class="p">,</span><span class="n">Ay_correct</span><span class="p">,</span><span class="n">Az_correct</span><span class="p">))</span><span class="o">.</span><span class="n">T</span><span class="o">/</span><span class="n">c</span>
+    <span class="k">return</span> <span class="n">correct_phi</span><span class="p">,</span><span class="n">correct_A</span>
+
+
+<span class="n">L</span><span class="o">=</span><span class="mf">0.4</span>
+<span class="n">numPoints</span><span class="o">=</span><span class="mi">1000</span>
+<span class="n">positions</span> <span class="o">=</span><span class="n">GetPositions</span><span class="p">(</span><span class="n">L</span><span class="p">,</span><span class="n">numPoints</span><span class="p">)</span>
+<span class="n">phi</span><span class="p">,</span><span class="n">A</span><span class="o">=</span><span class="n">GetExactPotential</span><span class="p">(</span><span class="n">positions</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mf">0.9</span><span class="o">*</span><span class="n">c</span><span class="p">)</span>
+
+<span class="n">PlotScalarField</span><span class="p">(</span><span class="c1">#...); plt.show()</span>
+<span class="n">PlotField</span><span class="p">(</span><span class="c1">#...); plt.show()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>  <span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">4</span><span class="p">],</span> <span class="n">line</span> <span class="mi">5</span>
+    <span class="n">correct_phi</span><span class="o">=</span> <span class="c1">#...</span>
+                 <span class="o">^</span>
+<span class="ne">SyntaxError</span>: invalid syntax
 </pre></div>
 </div>
 </div>
@@ -653,7 +649,14 @@ E_z = \frac{q}{4 \pi \epsilon_0 \sqrt{1 - (v/c)^2}} \frac{z}{\left(\frac{(x - vt
 <span class="expanded">Hide code cell content</span>
 </summary>
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### answer here</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">GetExactFields</span><span class="p">(</span><span class="n">positions</span><span class="p">,</span><span class="n">t</span><span class="p">):</span>
+    <span class="n">v</span><span class="o">=</span><span class="mf">0.9</span><span class="o">*</span><span class="n">c</span>
+    <span class="c1">#x=positions[:,0]</span>
+    <span class="c1">###</span>
+    <span class="k">return</span> <span class="n">correct_E</span> 
+
+
+<span class="c1">#E=GetExactFields(positions,0)</span>
 </pre></div>
 </div>
 </div>
@@ -666,7 +669,7 @@ E_z = \frac{q}{4 \pi \epsilon_0 \sqrt{1 - (v/c)^2}} \frac{z}{\left(\frac{(x - vt
 <p>We are again going to compute the field of a particle going at constant velocity but using a more general (albeit harder) approach.</p>
 <p>Our starting point in this exercise will be the Liénard–Wiechert potential  - i.e. that the scalar and vector potential fields at position <span class="math notranslate nohighlight">\(r\)</span> and time <span class="math notranslate nohighlight">\(t\)</span> are</p>
 <div class="math notranslate nohighlight">
-\[\phi(r,t) = \frac{q}{4\pi\epsilon_0}\left(\frac{1}{(1- n\cdot \beta_s) |r-r_s|} \right)_{t_r}\]</div>
+\[\phi(r,t) = \frac{q}{4\pi\epsilon_0}\left(\frac{1}{(1- n_s\cdot \beta_s) |r-r_s|} \right)_{t_r}\]</div>
 <div class="math notranslate nohighlight">
 \[A(r,t) = \frac{\beta_s}{c}\phi(r,t)\]</div>
 <p>where <span class="math notranslate nohighlight">\(\beta_s(t)= v_s(t)/c\)</span>, <span class="math notranslate nohighlight">\(r_s\)</span> is the source location of the charge, and <span class="math notranslate nohighlight">\(n_s =\frac{r-r_s}{|r-r_s|}\)</span>. The notation <span class="math notranslate nohighlight">\((...)_{t_r}\)</span> indicates anything inside the parenthesis has to be evaluated at <strong>retarded times</strong>.  Essentially what this is telling us is that we need to (almost) use the coulomb’s law we know and love but have to assume that the field moves at the speed of light to get to you!</p>
@@ -678,7 +681,7 @@ E_z = \frac{q}{4 \pi \epsilon_0 \sqrt{1 - (v/c)^2}} \frac{z}{\left(\frac{(x - vt
 <li><p><code class="docutils literal notranslate"><span class="pre">def</span> <span class="pre">r(tr)</span></code> which takes the time <span class="math notranslate nohighlight">\(t_r\)</span> and returns the position of the electron as a three-element numpy array (i.e <code class="docutils literal notranslate"><span class="pre">[x,y,z]</span></code>).</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">def</span> <span class="pre">velocity(tr)</span></code> which takes a time <span class="math notranslate nohighlight">\(t_r\)</span> and returns the velocity of the electron as a three-element numpy array (i.e <code class="docutils literal notranslate"><span class="pre">[x,y,z]</span></code>)</p></li>
 </ul>
-<p>for our moving point charges throughout this assignmet.</p>
+<p>for the moving point charge.</p>
 <p>In this problem, we will  work with a particle that is moving at a constant velocity and at the origin at <span class="math notranslate nohighlight">\(t=0\)</span> - i.e.</p>
 <div class="math notranslate nohighlight">
 \[x(t) = v t; y(t)=z(t)=0\]</div>
@@ -689,8 +692,10 @@ E_z = \frac{q}{4 \pi \epsilon_0 \sqrt{1 - (v/c)^2}} \frac{z}{\left(\frac{(x - vt
 <li><p><span class="math notranslate nohighlight">\(v_x(t)\)</span> vs <span class="math notranslate nohighlight">\(t\)</span> and <span class="math notranslate nohighlight">\(v_y(t)\)</span> vs <span class="math notranslate nohighlight">\(t\)</span> (on the same plot)</p></li>
 <li><p><span class="math notranslate nohighlight">\(y\)</span> vs. <span class="math notranslate nohighlight">\(x\)</span></p></li>
 </ul>
-<p>Let <span class="math notranslate nohighlight">\(-10^{-7}&lt;t&lt;10^{-7}\)</span></p>
-<p>To plot, you can do something like:</p>
+<p>Let <span class="math notranslate nohighlight">\(-10^{-7}&lt;t&lt;10^{-7}\)</span>
+You can use <code class="docutils literal notranslate"><span class="pre">ts=np.linspace(-1e-8,1e-8,1000)</span></code> to get an array of the times.</p>
+<p>As an example of something you need, you can use <code class="docutils literal notranslate"><span class="pre">r(ts)[:,</span> <span class="pre">0]</span></code> to get the x-position of your path over the time <code class="docutils literal notranslate"><span class="pre">ts</span></code></p>
+<p>To plot in general, you can do something like:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s2">&quot;x&quot;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s2">&quot;y&quot;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;x label&quot;</span><span class="p">)</span>
@@ -705,7 +710,16 @@ E_z = \frac{q}{4 \pi \epsilon_0 \sqrt{1 - (v/c)^2}} \frac{z}{\left(\frac{(x - vt
 <span class="expanded">Hide code cell content</span>
 </summary>
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### answer here</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">r</span><span class="p">(</span><span class="n">tr</span><span class="p">):</span>
+
+    <span class="k">return</span> <span class="c1">#</span>
+
+<span class="k">def</span> <span class="nf">v</span><span class="p">(</span><span class="n">tr</span><span class="p">):</span>
+    
+    <span class="k">return</span> <span class="c1"># </span>
+
+<span class="n">ts</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mf">1e-8</span><span class="p">,</span><span class="mf">1e-8</span><span class="p">,</span><span class="mi">1000</span><span class="p">)</span>
+<span class="c1">#plt.plot(...)</span>
 </pre></div>
 </div>
 </div>
@@ -720,20 +734,20 @@ E_z = \frac{q}{4 \pi \epsilon_0 \sqrt{1 - (v/c)^2}} \frac{z}{\left(\frac{(x - vt
 \[\frac{|r(t_r) - f|}{c} = (t_0-t_r)\]</div>
 <p>where <span class="math notranslate nohighlight">\(t_0\)</span> is the current time and <span class="math notranslate nohighlight">\(t_r\)</span> is the target retarded time.  In other words, the field moving at the speed of light had time to get from the source to the field point.</p>
 <p>Notice that this equation depends on <span class="math notranslate nohighlight">\(t_r\)</span> both on the l.h.s. and the r.h.s.  While for a particle path <span class="math notranslate nohighlight">\(r(t_r)\)</span> there might be an analytic equation which solves for <span class="math notranslate nohighlight">\(t_r\)</span> that won’t be the case in general.  Instead, what we will do is search or optimize for a <span class="math notranslate nohighlight">\(t_r\)</span> that satisfies this equation.</p>
-<p>To do this what we will do is set up a cost function <code class="docutils literal notranslate"><span class="pre">Cost(tr,t0,p)</span></code> which takes a k-length 1-d numpy array of retarded times, a scalar <span class="math notranslate nohighlight">\(t_0\)</span> which is the instantaneous time of the source charge, and a <span class="math notranslate nohighlight">\(k  \times 3\)</span> numpy array of positions.  It should return a single scalar which is zero if the retarded times all are correct and is otherwise positive quantifying how far away they are.  In other words, the cost function tells you if you are satisifying the equation above.</p>
+<p>To do this what we will do is set up a cost function <code class="docutils literal notranslate"><span class="pre">Cost(r,tr,t0,p)</span></code> which takes the function <code class="docutils literal notranslate"><span class="pre">r</span></code>, a k-length 1-d numpy array of retarded times, a scalar <span class="math notranslate nohighlight">\(t_0\)</span> which is the instantaneous time of the source charge, and a <span class="math notranslate nohighlight">\(k  \times 3\)</span> numpy array of positions.  It should return a single scalar which is zero if the retarded times all are correct and is otherwise positive quantifying how far away they are.  In other words, the cost function tells you if you are satisifying the equation above.</p>
 <p>Then all we need to do is minimize the cost function.  If we find a <span class="math notranslate nohighlight">\(t_r\)</span> for every point that makes it zero, then we know that we have found the time at which the source particle is generating the field.</p>
 <p>You will do this optimization using the Newton-Raphson.  We’ve wrapped this in a <code class="docutils literal notranslate"><span class="pre">OptMeClass</span></code> for you, but essentially we are just calling Newton-Raphson.  The class</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">numPoints</span><span class="o">=</span><span class="n">positions</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-<span class="n">opt</span><span class="o">=</span><span class="n">OptMeClass</span><span class="p">(</span><span class="n">cost</span><span class="p">,</span><span class="n">numPoints</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">numPositions</span><span class="o">=</span><span class="n">positions</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">opt</span><span class="o">=</span><span class="n">OptMeClass</span><span class="p">(</span><span class="n">cost</span><span class="p">,</span><span class="n">numPositions</span><span class="p">,</span><span class="n">r</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>is initialized by giving it the cost function and the number of positions.  Then you can call it by doing</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">tr</span><span class="o">=</span><span class="n">opt</span><span class="o">.</span><span class="n">Optimize</span><span class="p">(</span><span class="n">t0</span><span class="p">,</span><span class="n">positions</span><span class="p">,</span><span class="n">maxiter</span><span class="p">)</span>
+<p>is initialized by giving it the cost function, the number of positions and the position function <code class="docutils literal notranslate"><span class="pre">r</span></code>.  Then you can call it by doing</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">tr</span><span class="o">=</span><span class="n">opt</span><span class="o">.</span><span class="n">Optimize</span><span class="p">(</span><span class="n">t0</span><span class="p">,</span><span class="n">positions</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>where <code class="docutils literal notranslate"><span class="pre">t0</span></code> is the target time, <code class="docutils literal notranslate"><span class="pre">positions</span></code> is your array of positions and <code class="docutils literal notranslate"><span class="pre">maxiter</span></code> is the maximum number of itereations (set it to 1000 typically).   It should return an array of retarded times.  It will print out the value of the cost function and the number of times that are positive (which if you’re asking it for <span class="math notranslate nohighlight">\(t_0=0\)</span> is bad because the retarded time has to be in the pas)</p>
+<p>where <code class="docutils literal notranslate"><span class="pre">t0</span></code> is the target time, <code class="docutils literal notranslate"><span class="pre">positions</span></code> is your array of positions.   It should return an array of retarded times.  It will print out the value of the cost function and the number of times that are positive (which if you’re asking it for <span class="math notranslate nohighlight">\(t_0=0\)</span> any positive times are bad because the retarded time has to be in the past)</p>
 <p>Other then calling the Newton-Raphsody, it’s playing with the initial guesses a bit to try to help it find a reasonable answer.  I’ve tuned things to have “good” initial guesses for <span class="math notranslate nohighlight">\(t_0=0\)</span>.  If you are looking at other times (which you won’t do in this assignment), you might need to tune things differently in the class.</p>
-<p>Run this and make sure that your cost function is relatively tiny (~1-e16) and that you have no positive values of the time.</p>
+<p>Run this and make sure that your cost function is relatively tiny (~1e-16) and that you have no positive values of the time.</p>
 <p>Then plot the slice of time <span class="math notranslate nohighlight">\(t_r\)</span> at <span class="math notranslate nohighlight">\(y=0\)</span> You can do this using <code class="docutils literal notranslate"><span class="pre">PlotSliceY</span></code>.   It should look something like this:</p>
 <p><strong>Graph HERE</strong></p>
 <p>Here are some interesting things your should notice about the retarded time:</p>
@@ -749,20 +763,13 @@ E_z = \frac{q}{4 \pi \epsilon_0 \sqrt{1 - (v/c)^2}} \frac{z}{\left(\frac{(x - vt
 <span class="expanded">Hide code cell content</span>
 </summary>
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### answer here</span>
-</pre></div>
-</div>
-</div>
-</details>
-</div>
-<div class="cell tag_hide-cell docutils container">
-<details class="hide above-input">
-<summary aria-label="Toggle hidden content">
-<span class="collapsed">Show code cell content</span>
-<span class="expanded">Hide code cell content</span>
-</summary>
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### answer here</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">cost</span><span class="p">(</span><span class="n">r</span><span class="p">,</span><span class="n">tr</span><span class="p">,</span><span class="n">t0</span><span class="p">,</span><span class="n">p</span><span class="p">):</span>
+    <span class="c1"># ....</span>
+    <span class="k">return</span> <span class="n">ans</span>
+
+<span class="c1">#numPoints=positions.shape[0]</span>
+<span class="c1">#opt=OptMeClass(cost,numPoints,r)</span>
+<span class="c1">#tr=opt.Optimize(0,positions)</span>
 </pre></div>
 </div>
 </div>
@@ -816,6 +823,16 @@ E_z = \frac{q}{4 \pi \epsilon_0 \sqrt{1 - (v/c)^2}} \frac{z}{\left(\frac{(x - vt
 <p>Now let us use the Liénard–Wiechert potential equations at the beginning of this exercise along with the retarded time we’ve computed to evaluate the scalar and vector potentials. Remember that <span class="math notranslate nohighlight">\(r_s\)</span> and <span class="math notranslate nohighlight">\(v_s\)</span> are the locations of the source at the retarded times and <span class="math notranslate nohighlight">\(r\)</span> is the field position.</p>
 <p>Write a function <code class="docutils literal notranslate"><span class="pre">GetPotential(positions,t0,opt,r,v)</span></code> which takes the positions, the scalar <span class="math notranslate nohighlight">\(t0=0\)</span>, the optimization class, position function, and velocity function.  Make sure you are optimizing your retarded time locations inside this function!</p>
 <p>Check that you get the correct answer by doing the same slice that you did in exercise 1.</p>
+<p><em>Hints</em>: To get the norm <span class="math notranslate nohighlight">\(|r-r_s|\)</span> you can do</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">r_minus_rs</span><span class="o">=</span><span class="n">r</span><span class="p">(</span><span class="n">tr</span><span class="p">)</span><span class="o">-</span><span class="n">positions</span>
+<span class="n">norm</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">r_minus_rs</span><span class="p">,</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Once you have phi, it will be easiest to get <span class="math notranslate nohighlight">\(A\)</span> by doing</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">A</span><span class="o">=</span><span class="n">betas</span><span class="o">/</span><span class="n">c</span><span class="o">*</span><span class="n">phi</span><span class="p">[:,</span><span class="n">np</span><span class="o">.</span><span class="n">newaxis</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>where <code class="docutils literal notranslate"><span class="pre">betas</span></code> is the appropriate array of velocities (scaled by <span class="math notranslate nohighlight">\(c\)</span>).  The use of <code class="docutils literal notranslate"><span class="pre">np.newaxis</span></code> makes the shapes of the arrays all work out.</p>
 <div><img src="https://clark.physics.illinois.edu/246img/AnsStart.svg" width=200 align=left alt="Answer (end)"></img><br></div><div class="cell tag_hide-cell docutils container">
 <details class="hide above-input">
 <summary aria-label="Toggle hidden content">
@@ -846,7 +863,8 @@ E=-\nabla \phi - \frac{\partial A}{\partial t}
 \]</div>
 <p>Using our <code class="docutils literal notranslate"><span class="pre">GetPotential</span></code> function we can compute both the terms in this fraction and thereby evaluate the derivative.  You can do this for all six derivatives you need.</p>
 <p>Use <span class="math notranslate nohighlight">\(\delta x=\delta y = \delta z = 10^{-13}\)</span> and <span class="math notranslate nohighlight">\(\delta t=10^{-21}\)</span>.</p>
-<p>Write a <code class="docutils literal notranslate"><span class="pre">GetFields(positions,t0,opt,r,v)</span></code> function which takes the positions, the target time <span class="math notranslate nohighlight">\(t_0\)</span>, and the optimization class, position function, and velocity function and returns the fields.</p>
+<p>Write a <code class="docutils literal notranslate"><span class="pre">GetFields(positions,t0,cost,r,v)</span></code> function which takes the positions, the target time <span class="math notranslate nohighlight">\(t_0\)</span>, the cost function, position function, and velocity function and returns the fields.</p>
+<p>The first thing you will need to do in your function is define an optimization class.</p>
 <p>Plot the electric field.</p>
 <p>Verify that you are getting the correct results by comparing with the exact answer.</p>
 <p>There are a couple interesting things you might notice:</p>
@@ -854,6 +872,12 @@ E=-\nabla \phi - \frac{\partial A}{\partial t}
 <li><p>The contraction of the field lines is coming from special relativity (despite us not putting in any special relativity)</p></li>
 <li><p>Amazingly, despite the field values all coming form the source at different points, the field lines emanate from the current source location.  This is really pretty crazy/amazing.</p></li>
 </ul>
+<p>When you are getting the derivatives, it helps to copy the positions first and then add some delta onto them like</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="n">positions_deriv</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">copy</span><span class="p">(</span><span class="n">positions</span><span class="p">)</span>
+    <span class="n">positions_deriv</span><span class="p">[:,</span><span class="mi">0</span><span class="p">]</span><span class="o">+=</span><span class="n">delta</span>
+</pre></div>
+</div>
+<p>to get one term necessary for the x-derivative</p>
 <div><img src="https://clark.physics.illinois.edu/246img/AnsStart.svg" width=200 align=left alt="Answer (start)"></img><br></div><div class="cell tag_hide-cell docutils container">
 <details class="hide above-input">
 <summary aria-label="Toggle hidden content">
@@ -897,7 +921,7 @@ E=-\nabla \phi - \frac{\partial A}{\partial t}
 <p>Using the same window and resolution</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">L</span><span class="o">=</span><span class="mf">0.4</span>
 <span class="n">numPoints</span><span class="o">=</span><span class="mi">1000</span>
-<span class="n">positions</span><span class="p">,</span><span class="n">X</span><span class="p">,</span><span class="n">Y</span><span class="o">=</span><span class="n">GetPositions</span><span class="p">(</span><span class="n">L</span><span class="p">,</span><span class="n">numPoints</span><span class="p">)</span>
+<span class="n">positions</span><span class="o">=</span><span class="n">GetPositions</span><span class="p">(</span><span class="n">L</span><span class="p">,</span><span class="n">numPoints</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>find the retarded time for these positions and (copying down the code from earlier) plot the connection between field lines and source particle locations for 20 random field locations.</p>
@@ -1063,43 +1087,22 @@ E=-\nabla \phi - \frac{\partial A}{\partial t}
 <div><img src="https://clark.physics.illinois.edu/246img/AnsEnd.svg" width=200 align=left alt="Answer (end)"></img><br></div></section>
 <section id="b-the-fields">
 <h3>b. The fields<a class="headerlink" href="#b-the-fields" title="Permalink to this heading">#</a></h3>
-<p>This will actually require a little bit of change to your code.  Potentials add but fields don’t.  So in GetFields you will need to call the potential twice and add it before taking the derivatives.</p>
-<p>The changes to the code that I needed:</p>
-<ul class="simple">
-<li><p>cost function now takes a position function <code class="docutils literal notranslate"><span class="pre">r</span></code> - i.e. <code class="docutils literal notranslate"><span class="pre">cost(r,tr,t0,p)</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">GetFields</span></code> wants to define two optimization functions, <code class="docutils literal notranslate"><span class="pre">optA</span></code> and <code class="docutils literal notranslate"><span class="pre">optB</span></code> which take two different cost functions:</p>
-<ul>
-<li><p><code class="docutils literal notranslate"><span class="pre">partial(cost,rA)</span></code> and <code class="docutils literal notranslate"><span class="pre">partial(cost,rB)</span></code></p></li>
-</ul>
-</li>
-<li><p>In <code class="docutils literal notranslate"><span class="pre">GetFields</span></code>, you have to call the potential twice and add them.  Each potential gets called with its own optimization function, position function, and velocity function. Remember to pay attention to the sign of the charge (which can be implemented by just “subtracting” the two potentials)</p></li>
-</ul>
-<p>Once you’ve made these modification you should be able to use the rest of your code as is to produce the fields.  Use here <span class="math notranslate nohighlight">\(L=4\)</span></p>
-<div><img src="https://clark.physics.illinois.edu/246img/AnsStart.svg" width=200 align=left alt="Answer (start)"></img><br></div><div class="cell tag_hide-cell docutils container">
-<details class="hide above-input">
-<summary aria-label="Toggle hidden content">
-<span class="collapsed">Show code cell content</span>
-<span class="expanded">Hide code cell content</span>
-</summary>
+<p>For this problem, all you need to do is call your <code class="docutils literal notranslate"><span class="pre">GetFields</span></code> function twice - once with <code class="docutils literal notranslate"><span class="pre">rA</span></code> and <code class="docutils literal notranslate"><span class="pre">vA</span></code> and once with <code class="docutils literal notranslate"><span class="pre">rB</span></code> and <code class="docutils literal notranslate"><span class="pre">vB</span></code>.</p>
+<p>These two fields then need to be added together (actually in practice you will subtract them because one of those fields is with an opposite charge).</p>
+<p>This combined electric field can then be plotted and will give you the electric field lines for a dipole.</p>
+<div><img src="https://clark.physics.illinois.edu/246img/AnsStart.svg" width=200 align=left alt="Answer (start)"></img><br></div><div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### answer here</span>
 </pre></div>
 </div>
 </div>
-</details>
 </div>
-<div class="cell tag_hide-cell docutils container">
-<details class="hide above-input">
-<summary aria-label="Toggle hidden content">
-<span class="collapsed">Show code cell content</span>
-<span class="expanded">Hide code cell content</span>
-</summary>
+<div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### answer here</span>
 </pre></div>
 </div>
 </div>
-</details>
 </div>
 <div><img src="https://clark.physics.illinois.edu/246img/AnsEnd.svg" width=200 align=left alt="Answer (end)"></img><br></div></section>
 </section>
