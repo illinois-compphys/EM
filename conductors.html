@@ -1,0 +1,1348 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Conductors &#8212; Computation in Electricity and Magnetism  (for Phys435/436)# The title of the book. Will be placed in the left navbar.</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=55c26ed414f5f8a31ebb" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=55c26ed414f5f8a31ebb" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=9c3e77be" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=6a604523" />
+  
+  <!-- So that users can add custom icons -->
+  <script defer src="_static/scripts/fontawesome.js?digest=55c26ed414f5f8a31ebb"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=55c26ed414f5f8a31ebb" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=55c26ed414f5f8a31ebb" />
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=fab101a9"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=b8b12719"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script data-sd-tabs-storage-prefix="sphinx-design-tab-id-" src="_static/design-tabs.js?v=fcb327ea"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'conductors';</script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Electrodynamics" href="MovingCharges.html" />
+    <link rel="prev" title="Electricity and Magnetism" href="intro.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  
+    
+    <script src="_static/searchtools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <script src="searchindex.js"></script>
+  
+  </head>
+  <body data-default-mode="">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+  
+  
+  
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="Computation in Electricity and Magnetism  (for Phys435/436)# The title of the book. Will be placed in the left navbar. - Home"/>
+    <img src="_static/logo.png" class="logo__image only-dark pst-js-only" alt="Computation in Electricity and Magnetism  (for Phys435/436)# The title of the book. Will be placed in the left navbar. - Home"/>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Electricity and Magnetism
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Physics 435</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Conductors</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Physics 436</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="MovingCharges.html">Electrodynamics</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Other</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="Electrostatics.html">Electrostatics</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/illinois-compphys/EM/blob/main/electricity_and_magnetism/conductors.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Colab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Colab logo" src="_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/conductors.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button pst-navbar-icon"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Conductors</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-0-the-electric-field-of-point-charges">Exercise 0. The Electric Field of Point Charges</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-writing-field">a. Writing <code class="docutils literal notranslate"><span class="pre">field</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#b-two-charges">b. Two charges</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#c-the-field-along-a-line">c. The field along a line</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#d-the-field-on-a-plane">d. The field on a plane</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-1-charges-on-a-sphere">Exercise 1. Charges on a Sphere</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-placing-charges-on-a-sphere">a. Placing charges on a sphere</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#b-the-interior-is-screened">b. The interior is screened</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-2-letting-the-charges-rearrange-themselves">Exercise 2. Letting the Charges Rearrange Themselves</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-charges-in-a-solid-metal-ball">a. Charges in a solid metal ball</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#b-a-conductor-in-an-external-field">b. A conductor in an external field</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#c-a-hemispherical-conductor">c. A hemispherical conductor</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#d-a-cubic-conductor">d. A cubic conductor</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="conductors">
+<h1>Conductors<a class="headerlink" href="#conductors" title="Link to this heading">#</a></h1>
+<p>A <strong>conductor</strong> is a material where charges are mobile but constrained to the confines of the conductor.  In an external electric field those charges rearrange themselves into their lowest energy configuration.  This configuration (in the limit of enough electrons) has a remarkable property: <strong>the electric field inside
+the conductor is zero.</strong>  The excess charge ends up on the <em>surface</em>, and the interior is
+perfectly <em>screened</em>.  This is why you are safe inside a metal car during a lightning strike (a
+“Faraday cage”).</p>
+<p>In this module we will start only with point charges and Coulomb’s law and see this behavior directly.  We will:</p>
+<ol class="arabic simple" start="0">
+<li><p>Write a function that computes the electric field of a set of point charges, and test it on
+one and two charges.</p></li>
+<li><p>Place charges on a sphere by hand and check that the field inside vanishes.</p></li>
+<li><p>Let the charges move on their own — pushing each other around by the Coulomb force (gently damped so they don’t oscillate but converge to some configuration) and watch them <em>discover</em> the surface arrangement themselves: in a solid ball, on a sphere sitting in an external field, in a hemisphere, and in a cube.</p></li>
+</ol>
+<p>In this project we will work in <strong>natural units</strong>: the Coulomb constant is <span class="math notranslate nohighlight">\(K_E = 1\)</span> and our conductor
+has radius <span class="math notranslate nohighlight">\(R = 1\)</span>.  The mobile charges are <strong>electrons</strong>, each carrying charge <span class="math notranslate nohighlight">\(q = -1\)</span> (in
+units of the elementary charge), since electrons are what actually move in a metal.  Run the
+setup cell below before you start — it defines a few helper functions so you can focus on the
+physics.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">mpl_toolkits.mplot3d</span><span class="w"> </span><span class="kn">import</span> <span class="n">Axes3D</span> 
+<span class="kn">from</span><span class="w"> </span><span class="nn">matplotlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">animation</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">matplotlib.colors</span><span class="w"> </span><span class="kn">import</span> <span class="n">LogNorm</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">scipy.integrate</span><span class="w"> </span><span class="kn">import</span> <span class="n">solve_ivp</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">IPython.display</span><span class="w"> </span><span class="kn">import</span> <span class="n">HTML</span>
+
+
+<span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="o">.</span><span class="n">update</span><span class="p">({</span>
+    <span class="s2">"figure.dpi"</span><span class="p">:</span> <span class="mi">90</span><span class="p">,</span> <span class="s2">"savefig.dpi"</span><span class="p">:</span> <span class="mi">90</span><span class="p">,</span> <span class="s2">"font.size"</span><span class="p">:</span> <span class="mi">13</span><span class="p">,</span>
+    <span class="s2">"axes.grid"</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span> <span class="s2">"grid.alpha"</span><span class="p">:</span> <span class="mf">0.3</span><span class="p">,</span> <span class="s2">"axes.titlesize"</span><span class="p">:</span> <span class="mi">14</span><span class="p">,</span>
+    <span class="s2">"legend.frameon"</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+<span class="p">})</span>
+
+<span class="c1"># ---- physical constants (natural units) ----</span>
+<span class="n">K_E</span> <span class="o">=</span> <span class="mf">1.0</span>    <span class="c1"># Coulomb constant</span>
+<span class="n">R</span>   <span class="o">=</span> <span class="mf">1.0</span>    <span class="c1"># radius of our conductor</span>
+<span class="n">Q_E</span> <span class="o">=</span> <span class="o">-</span><span class="mf">1.0</span>   <span class="c1"># charge of each mobile carrier (an electron)</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">GetPlot</span><span class="p">(</span><span class="n">nrows</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">ncols</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">w</span><span class="o">=</span><span class="mi">6</span><span class="p">,</span> <span class="n">h</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">d3</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+    <span class="s2">"Return (fig, ax); set d3=True for a single 3D axis."</span>
+    <span class="k">if</span> <span class="n">d3</span><span class="p">:</span>
+        <span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="n">w</span><span class="p">,</span> <span class="n">h</span><span class="p">))</span>
+        <span class="k">return</span> <span class="n">fig</span><span class="p">,</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">111</span><span class="p">,</span> <span class="n">projection</span><span class="o">=</span><span class="s1">'3d'</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">nrows</span><span class="p">,</span> <span class="n">ncols</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="n">w</span><span class="p">,</span> <span class="n">h</span><span class="p">))</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">GetSpherePoints</span><span class="p">(</span><span class="n">numPoints</span><span class="p">):</span>
+    <span class="s2">"Return ~numPoints points spread (nearly) evenly over the unit sphere."</span>
+    <span class="n">pts</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">r</span> <span class="o">=</span> <span class="p">[],</span> <span class="n">numPoints</span><span class="p">,</span> <span class="mf">1.0</span>
+    <span class="n">alpha</span> <span class="o">=</span> <span class="mf">4.0</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">r</span><span class="o">*</span><span class="n">r</span><span class="o">/</span><span class="n">n</span>
+    <span class="n">d</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">alpha</span><span class="p">)</span>
+    <span class="n">m_nu</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="n">d</span><span class="p">))</span>
+    <span class="n">d_nu</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="n">m_nu</span>
+    <span class="n">d_phi</span> <span class="o">=</span> <span class="n">alpha</span><span class="o">/</span><span class="n">d_nu</span>
+    <span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">m_nu</span><span class="p">):</span>
+        <span class="n">nu</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="p">(</span><span class="n">m</span><span class="o">+</span><span class="mf">0.5</span><span class="p">)</span><span class="o">/</span><span class="n">m_nu</span>
+        <span class="n">m_phi</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">nu</span><span class="p">)</span><span class="o">/</span><span class="n">d_phi</span><span class="p">))</span>
+        <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">m_phi</span><span class="p">):</span>
+            <span class="n">phi</span> <span class="o">=</span> <span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">k</span><span class="o">/</span><span class="n">m_phi</span>
+            <span class="n">pts</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">r</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">nu</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">phi</span><span class="p">),</span>
+                        <span class="n">r</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">nu</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">phi</span><span class="p">),</span>
+                        <span class="n">r</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">nu</span><span class="p">)))</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">pts</span><span class="p">)</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">GetLinePoints</span><span class="p">(</span><span class="n">the_start</span><span class="p">,</span><span class="n">the_end</span><span class="p">,</span><span class="n">num_points</span><span class="p">,</span><span class="nb">dir</span><span class="o">=</span><span class="s2">"x"</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""num_points evenly spaced points on a line through the origin along the x, y, or z axis.</span>
+<span class="sd">    Returns (field_locs, xs): field_locs is (num_points, 3), ready to pass to `field`;</span>
+<span class="sd">    xs is the 1D array of coordinates along the line (handy for the horizontal axis of a plot)."""</span>
+    <span class="n">xs</span>  <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">the_start</span><span class="p">,</span> <span class="n">the_end</span><span class="p">,</span> <span class="n">num_points</span><span class="p">)</span>
+    <span class="k">if</span> <span class="nb">dir</span><span class="o">==</span><span class="s2">"x"</span><span class="p">:</span>
+        <span class="n">field_locs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">stack</span><span class="p">([</span><span class="n">xs</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros_like</span><span class="p">(</span><span class="n">xs</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros_like</span><span class="p">(</span><span class="n">xs</span><span class="p">)],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">field_locs</span><span class="p">,</span><span class="n">xs</span>
+    <span class="k">elif</span> <span class="nb">dir</span><span class="o">==</span><span class="s2">"y"</span><span class="p">:</span>
+        <span class="n">field_locs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">stack</span><span class="p">([</span><span class="n">np</span><span class="o">.</span><span class="n">zeros_like</span><span class="p">(</span><span class="n">xs</span><span class="p">),</span> <span class="n">xs</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">zeros_like</span><span class="p">(</span><span class="n">xs</span><span class="p">)],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">field_locs</span><span class="p">,</span><span class="n">xs</span>
+    <span class="k">elif</span> <span class="nb">dir</span><span class="o">==</span><span class="s2">"z"</span><span class="p">:</span>
+        <span class="n">field_locs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">stack</span><span class="p">([</span><span class="n">np</span><span class="o">.</span><span class="n">zeros_like</span><span class="p">(</span><span class="n">xs</span><span class="p">),</span><span class="n">np</span><span class="o">.</span><span class="n">zeros_like</span><span class="p">(</span><span class="n">xs</span><span class="p">),</span><span class="n">xs</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">field_locs</span><span class="p">,</span><span class="n">xs</span>
+    <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">"dir must be 'x', 'y', or 'z'"</span><span class="p">)</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">GetSquarePoints</span><span class="p">(</span><span class="n">the_start</span><span class="p">,</span><span class="n">the_end</span><span class="p">,</span><span class="n">num_points</span><span class="o">=</span><span class="mi">45</span><span class="p">,</span><span class="nb">dir</span><span class="o">=</span><span class="s1">'xy'</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""A num_points x num_points grid covering [the_start, the_end]^2 in the z = 0 plane (dir='xy')</span>
+<span class="sd">    or the y = 0 plane (dir='xz').  Returns (field_locs, X, Y): field_locs is the flattened</span>
+<span class="sd">    (num_points**2, 3) array of grid points, ready to pass to `field`; X, Y are the 2D grid</span>
+<span class="sd">    coordinates (as from np.meshgrid).  For dir='xz', Y holds the z coordinate."""</span>
+    <span class="n">g</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">the_start</span><span class="p">,</span><span class="n">the_end</span><span class="p">,</span> <span class="n">num_points</span><span class="p">)</span>
+    <span class="n">X</span><span class="p">,</span> <span class="n">Y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">meshgrid</span><span class="p">(</span><span class="n">g</span><span class="p">,</span> <span class="n">g</span><span class="p">)</span>
+    <span class="k">if</span> <span class="nb">dir</span><span class="o">==</span><span class="s1">'xy'</span><span class="p">:</span>
+        <span class="n">field_locs_XY</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">stack</span><span class="p">([</span><span class="n">X</span><span class="o">.</span><span class="n">ravel</span><span class="p">(),</span> <span class="n">Y</span><span class="o">.</span><span class="n">ravel</span><span class="p">(),</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">X</span><span class="o">.</span><span class="n">size</span><span class="p">)],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">field_locs_XY</span><span class="p">,</span><span class="n">X</span><span class="p">,</span><span class="n">Y</span>
+    <span class="k">elif</span> <span class="nb">dir</span><span class="o">==</span><span class="s1">'xz'</span><span class="p">:</span>
+        <span class="n">field_locs_XY</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">stack</span><span class="p">([</span><span class="n">X</span><span class="o">.</span><span class="n">ravel</span><span class="p">(),</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">X</span><span class="o">.</span><span class="n">size</span><span class="p">),</span><span class="n">Y</span><span class="o">.</span><span class="n">ravel</span><span class="p">()],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">field_locs_XY</span><span class="p">,</span><span class="n">X</span><span class="p">,</span><span class="n">Y</span>
+    <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">"dir must be 'xy' or 'xz'"</span><span class="p">)</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">GetBallPoints</span><span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="n">R</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""N random points uniform in the volume of a ball of radius R (r = R u^(1/3) so they are not</span>
+<span class="sd">    bunched at the center).  Returns an (N, 3) array."""</span>
+    <span class="n">u</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">N</span><span class="p">)</span>
+    <span class="n">costheta</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">N</span><span class="p">)</span>
+    <span class="n">phi</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="n">N</span><span class="p">)</span>
+    <span class="n">r</span> <span class="o">=</span> <span class="n">R</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">cbrt</span><span class="p">(</span><span class="n">u</span><span class="p">);</span> <span class="n">theta</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arccos</span><span class="p">(</span><span class="n">costheta</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">stack</span><span class="p">([</span><span class="n">r</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">phi</span><span class="p">),</span>
+                     <span class="n">r</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">phi</span><span class="p">),</span>
+                     <span class="n">r</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">theta</span><span class="p">)],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">GetHemispherePoints</span><span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="n">R</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""N random points uniform in the volume of the upper half-ball (z &gt;= 0) of radius R.</span>
+<span class="sd">    Returns an (N, 3) array."""</span>
+    <span class="n">u</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">N</span><span class="p">)</span>
+    <span class="n">costheta</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">N</span><span class="p">)</span>        <span class="c1"># upper half only</span>
+    <span class="n">phi</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="n">N</span><span class="p">)</span>
+    <span class="n">r</span> <span class="o">=</span> <span class="n">R</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">cbrt</span><span class="p">(</span><span class="n">u</span><span class="p">);</span> <span class="n">theta</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arccos</span><span class="p">(</span><span class="n">costheta</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">stack</span><span class="p">([</span><span class="n">r</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">phi</span><span class="p">),</span>
+                     <span class="n">r</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">phi</span><span class="p">),</span>
+                     <span class="n">r</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">theta</span><span class="p">)],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">PlotSlice</span><span class="p">(</span><span class="n">Ex</span><span class="p">,</span><span class="n">Ey</span><span class="p">,</span><span class="n">Emag</span><span class="p">,</span><span class="n">X</span><span class="p">,</span><span class="n">Y</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""Draw a field map on a grid from GetSquarePoints: Emag as a log-scale color map (1e-2 to 1e2)</span>
+<span class="sd">    with field lines on top.  Ex, Ey are the two IN-PLANE field components on the grid (for an</span>
+<span class="sd">    'xz' grid pass E_x and E_z).  Returns (fig, ax)."""</span>
+    <span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">GetPlot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">w</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">h</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+    <span class="n">cf</span> <span class="o">=</span> <span class="n">axes</span><span class="o">.</span><span class="n">contourf</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">Y</span><span class="p">,</span> <span class="n">Emag</span><span class="p">,</span> <span class="n">levels</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">logspace</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">40</span><span class="p">),</span>
+                    <span class="n">norm</span><span class="o">=</span><span class="n">LogNorm</span><span class="p">(</span><span class="n">vmin</span><span class="o">=</span><span class="mf">1e-2</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="mf">1e2</span><span class="p">),</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">'inferno'</span><span class="p">,</span> <span class="n">extend</span><span class="o">=</span><span class="s1">'both'</span><span class="p">)</span>
+    <span class="n">axes</span><span class="o">.</span><span class="n">streamplot</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">Y</span><span class="p">,</span> <span class="n">Ex</span><span class="p">,</span> <span class="n">Ey</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">'white'</span><span class="p">,</span> <span class="n">density</span><span class="o">=</span><span class="mf">1.1</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">arrowsize</span><span class="o">=</span><span class="mf">0.6</span><span class="p">)</span>
+    <span class="n">cb</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">cf</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">axes</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">'|E|'</span><span class="p">)</span>
+    <span class="n">ticks</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.01</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">100</span><span class="p">]</span>
+    <span class="n">cb</span><span class="o">.</span><span class="n">set_ticks</span><span class="p">(</span><span class="n">ticks</span><span class="p">,</span> <span class="n">labels</span><span class="o">=</span><span class="p">[</span><span class="sa">f</span><span class="s1">'</span><span class="si">{</span><span class="n">t</span><span class="si">:</span><span class="s1">g</span><span class="si">}</span><span class="s1">'</span> <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">ticks</span><span class="p">])</span>
+    <span class="n">axes</span><span class="o">.</span><span class="n">set_aspect</span><span class="p">(</span><span class="s1">'equal'</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">fig</span><span class="p">,</span><span class="n">axes</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">animate_charges</span><span class="p">(</span><span class="n">sol</span><span class="p">,</span> <span class="n">N</span><span class="p">,</span> <span class="n">lim</span><span class="o">=</span><span class="mf">1.4</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s1">''</span><span class="p">,</span> <span class="n">stride</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+    <span class="s2">"Animate the 3D charge positions stored in a solve_ivp solution."</span>
+    <span class="n">pos_t</span> <span class="o">=</span> <span class="n">sol</span><span class="o">.</span><span class="n">y</span><span class="p">[:</span><span class="mi">3</span><span class="o">*</span><span class="n">N</span><span class="p">,</span> <span class="p">::</span><span class="n">stride</span><span class="p">]</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mf">5.5</span><span class="p">,</span> <span class="mf">5.5</span><span class="p">))</span>
+    <span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">111</span><span class="p">,</span> <span class="n">projection</span><span class="o">=</span><span class="s1">'3d'</span><span class="p">)</span>
+    <span class="n">scat</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">pos_t</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">pos_t</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">pos_t</span><span class="p">[:,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">s</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">'tab:blue'</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="o">-</span><span class="n">lim</span><span class="p">,</span> <span class="n">lim</span><span class="p">);</span> <span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="o">-</span><span class="n">lim</span><span class="p">,</span> <span class="n">lim</span><span class="p">);</span> <span class="n">ax</span><span class="o">.</span><span class="n">set_zlim</span><span class="p">(</span><span class="o">-</span><span class="n">lim</span><span class="p">,</span> <span class="n">lim</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="n">title</span><span class="p">)</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">update</span><span class="p">(</span><span class="n">f</span><span class="p">):</span>
+        <span class="n">scat</span><span class="o">.</span><span class="n">_offsets3d</span> <span class="o">=</span> <span class="p">(</span><span class="n">pos_t</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">f</span><span class="p">],</span> <span class="n">pos_t</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">f</span><span class="p">],</span> <span class="n">pos_t</span><span class="p">[:,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">f</span><span class="p">])</span>
+        <span class="k">return</span> <span class="p">(</span><span class="n">scat</span><span class="p">,)</span>
+    <span class="n">ani</span> <span class="o">=</span> <span class="n">animation</span><span class="o">.</span><span class="n">FuncAnimation</span><span class="p">(</span><span class="n">fig</span><span class="p">,</span> <span class="n">update</span><span class="p">,</span> <span class="n">frames</span><span class="o">=</span><span class="n">pos_t</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">interval</span><span class="o">=</span><span class="mi">80</span><span class="p">,</span><span class="n">repeat</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">close</span><span class="p">(</span><span class="n">fig</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">HTML</span><span class="p">(</span><span class="n">ani</span><span class="o">.</span><span class="n">to_jshtml</span><span class="p">())</span>
+
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Setup complete."</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Setup complete.
+</pre></div>
+</div>
+</div>
+</div>
+<section id="exercise-0-the-electric-field-of-point-charges">
+<h2>Exercise 0. The Electric Field of Point Charges<a class="headerlink" href="#exercise-0-the-electric-field-of-point-charges" title="Link to this heading">#</a></h2>
+<p>We will be interested in computing the electric field of a series of point charges. This can be done by adding up the Coulomb fields over a
+collection of point charges.  We will start by writing this function which takes point charges and field locations and computes the field at those locations for those point charges.  This will be used later for conductors.</p>
+<section id="a-writing-field">
+<h3>a. Writing <code class="docutils literal notranslate"><span class="pre">field</span></code><a class="headerlink" href="#a-writing-field" title="Link to this heading">#</a></h3>
+<p>The field of a <em>single</em> point charge <span class="math notranslate nohighlight">\(q\)</span> sitting at <span class="math notranslate nohighlight">\(\mathbf r_i\)</span>, measured at a point <span class="math notranslate nohighlight">\(\mathbf r\)</span>, is</p>
+<div class="math notranslate nohighlight">
+\[ \mathbf E(\mathbf r) = K_E\, q\, \frac{\mathbf r - \mathbf r_i}{\left(|\mathbf r - \mathbf r_i|^2 + \epsilon\right)^{3/2}}, \]</div>
+<p>and the field of many charges is just the sum of these (superposition).  Write a function</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">field</span><span class="p">(</span><span class="n">charges</span><span class="p">,</span> <span class="n">points</span><span class="p">,</span> <span class="n">q</span><span class="p">):</span>
+    <span class="s2">"E field at each of the M points (M,3) due to N charges (N,3), each of charge q; returns (M,3)."</span>
+    <span class="o">...</span>
+    <span class="k">return</span> <span class="n">E</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">charges</span></code> is an <code class="docutils literal notranslate"><span class="pre">(N,</span> <span class="pre">3)</span></code> array: the <strong>positions</strong> of the <span class="math notranslate nohighlight">\(N\)</span> charges (row <span class="math notranslate nohighlight">\(i\)</span> is <span class="math notranslate nohighlight">\(\mathbf r_i\)</span>).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">points</span></code> is an <code class="docutils literal notranslate"><span class="pre">(M,</span> <span class="pre">3)</span></code> array: the places where you want to <strong>measure</strong> the field.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">q</span></code> is the charge on each of them.  For our electrons that is <code class="docutils literal notranslate"><span class="pre">Q_E</span></code> <span class="math notranslate nohighlight">\(= -1\)</span>.</p></li>
+<li><p>It returns an <code class="docutils literal notranslate"><span class="pre">(M,</span> <span class="pre">3)</span></code> array: row <span class="math notranslate nohighlight">\(k\)</span> is the field vector <span class="math notranslate nohighlight">\(\mathbf E\)</span> at <code class="docutils literal notranslate"><span class="pre">points[k]</span></code>.</p></li>
+</ul>
+<p>A few pointers:</p>
+<ul class="simple">
+<li><p>The equation above is modified by a small <strong>softening</strong> <span class="math notranslate nohighlight">\(\epsilon=\)</span><code class="docutils literal notranslate"><span class="pre">1e-4</span></code>, to <span class="math notranslate nohighlight">\(|\mathbf r - \mathbf r_i|^2\)</span> before raising it to the <span class="math notranslate nohighlight">\(3/2\)</span> power, so a field point that lands right on a charge doesn’t divide by zero.  (Exercise 2
+relies on this: it evaluates the field <em>at</em> each charge, where the charge’s own term becomes
+<span class="math notranslate nohighlight">\(0/(10^{-4})^{3/2} = 0\)</span>.)</p></li>
+<li><p><strong>Start simple.</strong>  The easiest fast thing to do is to start with no electric field <code class="docutils literal notranslate"><span class="pre">E</span> <span class="pre">=</span> <span class="pre">np.zeros_like(points)</span></code> and  write a  <code class="docutils literal notranslate"><span class="pre">for</span></code> loop over the charges, compute <span class="math notranslate nohighlight">\(\mathbf r - \mathbf r_i\)</span>, <code class="docutils literal notranslate"><span class="pre">d=points</span> <span class="pre">-</span> <span class="pre">charges[i]</span></code> (shape <code class="docutils literal notranslate"><span class="pre">(M,</span> <span class="pre">3)</span></code>) and add that charge’s field at <em>all</em> <span class="math notranslate nohighlight">\(M\)</span> field locations at once.   When you
+divide the <code class="docutils literal notranslate"><span class="pre">(M,</span> <span class="pre">3)</span></code> displacements by the <code class="docutils literal notranslate"><span class="pre">(M,)</span></code> cubed distances, NumPy needs the distances as a
+column: compute those distances with <code class="docutils literal notranslate"><span class="pre">np.sum(d**2,</span> <span class="pre">axis=1,</span> <span class="pre">keepdims=True)</span></code> (shape <code class="docutils literal notranslate"><span class="pre">(M,</span> <span class="pre">1)</span></code>) so the division
+applies to all three components.</p></li>
+<li><p><strong>Optional: remove the loop.</strong>  <code class="docutils literal notranslate"><span class="pre">points[:,</span> <span class="pre">None,</span> <span class="pre">:]</span> <span class="pre">-</span> <span class="pre">charges[None,</span> <span class="pre">:,</span> <span class="pre">:]</span></code> has shape <code class="docutils literal notranslate"><span class="pre">(M,</span> <span class="pre">N,</span> <span class="pre">3)</span></code>;
+it holds every displacement vector <span class="math notranslate nohighlight">\(\mathbf r - \mathbf r_i\)</span> at once.  Form the cubed distances
+(shape <code class="docutils literal notranslate"><span class="pre">(M,</span> <span class="pre">N)</span></code>), divide (index them as <code class="docutils literal notranslate"><span class="pre">r3[:,</span> <span class="pre">:,</span> <span class="pre">None]</span></code> so they broadcast against the last axis),
+and sum over the charge axis (<code class="docutils literal notranslate"><span class="pre">axis=1</span></code>).</p></li>
+<li><p>Start with <code class="docutils literal notranslate"><span class="pre">charges</span> <span class="pre">=</span> <span class="pre">np.asarray(charges,</span> <span class="pre">float)</span></code> (and the same for <code class="docutils literal notranslate"><span class="pre">points</span></code>) so that you can
+pass in plain Python lists like <code class="docutils literal notranslate"><span class="pre">[[0,</span> <span class="pre">0,</span> <span class="pre">0]]</span></code>.</p></li>
+</ul>
+<p><strong>Quick check.</strong>  Put one electron at the origin and measure the field at <span class="math notranslate nohighlight">\((1,0,0)\)</span> and <span class="math notranslate nohighlight">\((2,0,0)\)</span>
+in a <em>single</em> call.  The field should point <em>inward</em> (toward <span class="math notranslate nohighlight">\(-x\)</span>, since an electron is negative),
+have magnitude <span class="math notranslate nohighlight">\(1\)</span> at <span class="math notranslate nohighlight">\(x=1\)</span> (you’ll see <span class="math notranslate nohighlight">\(0.99985\)</span> because of the softening), and fall off like <span class="math notranslate nohighlight">\(1/r^2\)</span>, so the two magnitudes are in the ratio <span class="math notranslate nohighlight">\(4:1\)</span>.
+For example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">E</span> <span class="o">=</span> <span class="n">field</span><span class="p">([[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]],</span> <span class="p">[[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]],</span> <span class="n">Q_E</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">E</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">np.linalg.norm(E[0])</span></code> gives the magnitude of the first field vector.</p>
+<p><strong>Deliverables</strong></p>
+<ul class="simple">
+<li><p>Your <code class="docutils literal notranslate"><span class="pre">field</span></code>.</p></li>
+<li><p>The printed field vectors at <span class="math notranslate nohighlight">\(x = 1\)</span> and <span class="math notranslate nohighlight">\(x = 2\)</span>, and their magnitude ratio.</p></li>
+</ul>
+<div><img src="https://clark.physics.illinois.edu/246img/AnsStart.svg" width=200 align=left alt="Answer (start)"></img><br></div><p><em>Your answer here.</em></p>
+<div><img src="https://clark.physics.illinois.edu/246img/AnsEnd.svg" width=200 align=left alt="Answer (end)"></img><br></div></section>
+<section id="b-two-charges">
+<h3>b. Two charges<a class="headerlink" href="#b-two-charges" title="Link to this heading">#</a></h3>
+<p>Now place <strong>two</strong> electrons, at <span class="math notranslate nohighlight">\((-0.5, 0, 0)\)</span> and <span class="math notranslate nohighlight">\((+0.5, 0, 0)\)</span>, and use your <code class="docutils literal notranslate"><span class="pre">field</span></code> to
+measure the field at these points:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>point</p></th>
+<th class="head"><p>where it is</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\((0, 0, 0)\)</span></p></td>
+<td><p>exactly halfway between the electrons</p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\((0, 1, 0)\)</span></p></td>
+<td><p>on the perpendicular bisector, a distance 1 from the midpoint</p></td>
+</tr>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\((2, 0, 0)\)</span></p></td>
+<td><p>on the axis, outside the pair</p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\((10, 0, 0)\)</span></p></td>
+<td><p>far away on the axis</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Put the electron positions in a <code class="docutils literal notranslate"><span class="pre">(2,</span> <span class="pre">3)</span></code> array and the four measurement points in a <code class="docutils literal notranslate"><span class="pre">(4,</span> <span class="pre">3)</span></code> array,
+so that a <strong>single</strong> call to <code class="docutils literal notranslate"><span class="pre">field</span></code> gives all four field vectors:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">electron_locs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="o">-</span><span class="mf">0.5</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mf">0.5</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]])</span>
+<span class="n">field_locs</span>    <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]])</span>
+</pre></div>
+</div>
+<p>Then print the field vector and its magnitude at each point (looping over
+<code class="docutils literal notranslate"><span class="pre">zip(field_locs,</span> <span class="pre">E)</span></code> is a convenient way to do that).  Keep the name <code class="docutils literal notranslate"><span class="pre">electron_locs</span></code>: parts (c)
+and (d) reuse these two electrons.</p>
+<p>Before you run it, <em>predict</em> the direction of the field at each point (remember: the field of an
+electron points toward it).</p>
+<p><strong>Deliverable</strong></p>
+<ul class="simple">
+<li><p>The printed <span class="math notranslate nohighlight">\(\mathbf E\)</span> and <span class="math notranslate nohighlight">\(|\mathbf E|\)</span> at the four points.</p></li>
+</ul>
+<p><strong>Questions.</strong></p>
+<ol class="arabic simple">
+<li><p>Why is the field zero at the midpoint?</p></li>
+<li><p>At <span class="math notranslate nohighlight">\((0,1,0)\)</span> the field points straight along <span class="math notranslate nohighlight">\(-y\)</span>.  Why does its <span class="math notranslate nohighlight">\(x\)</span>-component cancel?</p></li>
+<li><p>Compare <span class="math notranslate nohighlight">\(|\mathbf E|\)</span> at <span class="math notranslate nohighlight">\((10,0,0)\)</span> to the field of a single charge <span class="math notranslate nohighlight">\(-2\)</span> at the origin,
+<span class="math notranslate nohighlight">\(2/10^2 = 0.02\)</span>.  Why do the two electrons look like one charge of <span class="math notranslate nohighlight">\(-2\)</span> from far away?</p></li>
+</ol>
+<div><img src="https://clark.physics.illinois.edu/246img/AnsStart.svg" width=200 align=left alt="Answer (start)"></img><br></div><p><em>Your answer here.</em></p>
+<div><img src="https://clark.physics.illinois.edu/246img/AnsEnd.svg" width=200 align=left alt="Answer (end)"></img><br></div></section>
+<section id="c-the-field-along-a-line">
+<h3>c. The field along a line<a class="headerlink" href="#c-the-field-along-a-line" title="Link to this heading">#</a></h3>
+<p>A handful of points is useful for checking, but to <em>see</em> the field we want many points.  The
+helper <code class="docutils literal notranslate"><span class="pre">GetLinePoints(start,</span> <span class="pre">end,</span> <span class="pre">num_points)</span></code> returns a <code class="docutils literal notranslate"><span class="pre">(num_points,</span> <span class="pre">3)</span></code> array of points along the
+<span class="math notranslate nohighlight">\(x\)</span>-axis (with <span class="math notranslate nohighlight">\(y = z = 0\)</span>), ready to hand to <code class="docutils literal notranslate"><span class="pre">field</span></code>, along with the 1D array of their <span class="math notranslate nohighlight">\(x\)</span> values for
+plotting:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">field_locs</span><span class="p">,</span> <span class="n">xs</span> <span class="o">=</span> <span class="n">GetLinePoints</span><span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">400</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>(Pass <code class="docutils literal notranslate"><span class="pre">dir='y'</span></code> or <code class="docutils literal notranslate"><span class="pre">dir='z'</span></code> for a line along that axis instead.)  Compute the field of the two
+electrons at these 400 points with <strong>one</strong> call to <code class="docutils literal notranslate"><span class="pre">field</span></code>, take the magnitude of the field using</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Ex</span><span class="o">=</span><span class="n">E</span><span class="p">[:,</span><span class="mi">0</span><span class="p">];</span> <span class="n">Ey</span><span class="o">=</span><span class="n">E</span><span class="p">[:,</span><span class="mi">1</span><span class="p">];</span> <span class="n">Ez</span><span class="o">=</span><span class="n">E</span><span class="p">[:,</span><span class="mi">2</span><span class="p">]</span>
+<span class="n">Emag</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">Ex</span><span class="o">**</span><span class="mi">2</span><span class="o">+</span><span class="n">Ey</span><span class="o">**</span><span class="mi">2</span><span class="o">+</span><span class="n">Ez</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>and plot <span class="math notranslate nohighlight">\(|\mathbf E|\)</span> against <span class="math notranslate nohighlight">\(x\)</span> on a log <span class="math notranslate nohighlight">\(y\)</span>-scale.  The helper
+<code class="docutils literal notranslate"><span class="pre">GetPlot</span></code> makes a figure and axis for you:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">GetPlot</span><span class="p">(</span><span class="n">w</span><span class="o">=</span><span class="mi">6</span><span class="p">,</span> <span class="n">h</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">xs</span><span class="p">,</span> <span class="n">Emag</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">'two electrons'</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_yscale</span><span class="p">(</span><span class="s1">'log'</span><span class="p">);</span> <span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="mf">1e-2</span><span class="p">,</span> <span class="mf">1e3</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Label your axes (<code class="docutils literal notranslate"><span class="pre">ax.set_xlabel</span></code>, <code class="docutils literal notranslate"><span class="pre">ax.set_ylabel</span></code>).</p>
+<p><strong>Deliverable</strong></p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(|\mathbf E|\)</span> vs. <span class="math notranslate nohighlight">\(x\)</span> for the two electrons.</p></li>
+</ul>
+<div><img src="https://clark.physics.illinois.edu/246img/AnsStart.svg" width=200 align=left alt="Answer (start)"></img><br></div><p><em>Your answer here.</em></p>
+<div><img src="https://clark.physics.illinois.edu/246img/AnsEnd.svg" width=200 align=left alt="Answer (end)"></img><br></div></section>
+<section id="d-the-field-on-a-plane">
+<h3>d. The field on a plane<a class="headerlink" href="#d-the-field-on-a-plane" title="Link to this heading">#</a></h3>
+<p>Finally, look at the field of the same two electrons on a whole plane.  The helper <code class="docutils literal notranslate"><span class="pre">GetSquarePoints(start,</span> <span class="pre">end)</span></code> builds a
+<span class="math notranslate nohighlight">\(45 \times 45\)</span> grid of points covering a square in the <span class="math notranslate nohighlight">\(z = 0\)</span> plane.  It returns them as a flat
+<code class="docutils literal notranslate"><span class="pre">(2025,</span> <span class="pre">3)</span></code> array ready to hand to <code class="docutils literal notranslate"><span class="pre">field</span></code>, along with the grid coordinates <code class="docutils literal notranslate"><span class="pre">X,</span> <span class="pre">Y</span></code> (2D arrays, as
+from <code class="docutils literal notranslate"><span class="pre">np.meshgrid</span></code>).  Compute the field there, reshape each component back onto the grid, and draw
+it with <code class="docutils literal notranslate"><span class="pre">PlotSlice</span></code>, which shows <span class="math notranslate nohighlight">\(|\mathbf E|\)</span> as a log-scale color map with field lines on top:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">field_locs</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">Y</span> <span class="o">=</span> <span class="n">GetSquarePoints</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">E</span> <span class="o">=</span> <span class="n">field</span><span class="p">(</span><span class="n">electron_locs</span><span class="p">,</span> <span class="n">field_locs</span><span class="p">,</span> <span class="n">Q_E</span><span class="p">)</span>
+<span class="n">Ex</span> <span class="o">=</span> <span class="n">E</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">X</span><span class="o">.</span><span class="n">shape</span><span class="p">);</span> <span class="n">Ey</span> <span class="o">=</span> <span class="n">E</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">X</span><span class="o">.</span><span class="n">shape</span><span class="p">);</span> <span class="n">Ez</span> <span class="o">=</span> <span class="n">E</span><span class="p">[:,</span> <span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">X</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="n">Emag</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">Ex</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">Ey</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">Ez</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">PlotSlice</span><span class="p">(</span><span class="n">Ex</span><span class="p">,</span> <span class="n">Ey</span><span class="p">,</span> <span class="n">Emag</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">Y</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>For the <span class="math notranslate nohighlight">\(y = 0\)</span> plane, use <code class="docutils literal notranslate"><span class="pre">GetSquarePoints(-2,</span> <span class="pre">2,</span> <span class="pre">dir='xz')</span></code>.  The grid’s second coordinate is then
+<span class="math notranslate nohighlight">\(z\)</span>, so pass <code class="docutils literal notranslate"><span class="pre">Ez</span></code> (not <code class="docutils literal notranslate"><span class="pre">Ey</span></code>) as the second in-plane field component.</p>
+<p><strong>Deliverables</strong></p>
+<ul class="simple">
+<li><p>A field map of the two electrons in the <span class="math notranslate nohighlight">\(z = 0\)</span> plane.</p></li>
+<li><p>The same map in the <span class="math notranslate nohighlight">\(y = 0\)</span> plane.</p></li>
+</ul>
+<p><strong>Question.</strong>  Where is the field weakest, and how does that match part (b)?  (A small white patch
+there means a grid point where <span class="math notranslate nohighlight">\(|\mathbf E|\)</span> is exactly <span class="math notranslate nohighlight">\(0\)</span>, which a log color scale can’t show.  Matplotlib also prints a harmless warning about it.)
+Why do the <span class="math notranslate nohighlight">\(z = 0\)</span> and <span class="math notranslate nohighlight">\(y = 0\)</span> pictures look the same?</p>
+<div><img src="https://clark.physics.illinois.edu/246img/AnsStart.svg" width=200 align=left alt="Answer (start)"></img><br></div><p><em>Your answer here.</em></p>
+<div><img src="https://clark.physics.illinois.edu/246img/AnsEnd.svg" width=200 align=left alt="Answer (end)"></img><br></div></section>
+</section>
+<section id="exercise-1-charges-on-a-sphere">
+<h2>Exercise 1. Charges on a Sphere<a class="headerlink" href="#exercise-1-charges-on-a-sphere" title="Link to this heading">#</a></h2>
+<p>In Exercise 0 we computed the field of one or two charges.  Now we use the same <code class="docutils literal notranslate"><span class="pre">field</span></code> to look
+at many charges.  We begin by spreading electrons uniformly over a sphere <em>by hand</em>, then sum up
+their Coulomb fields and look at the result.  What we expect to see is that the field inside the
+sphere is zero, just as it is inside a conductor.</p>
+<section id="a-placing-charges-on-a-sphere">
+<h3>a. Placing charges on a sphere<a class="headerlink" href="#a-placing-charges-on-a-sphere" title="Link to this heading">#</a></h3>
+<p>The helper <code class="docutils literal notranslate"><span class="pre">GetSpherePoints(n)</span></code> returns an array of roughly <code class="docutils literal notranslate"><span class="pre">n</span></code> points (shape <code class="docutils literal notranslate"><span class="pre">(n,</span> <span class="pre">3)</span></code>, give or
+take a few) spread evenly over the unit sphere.  Use it to place about 300 electrons on the sphere
+<span class="math notranslate nohighlight">\(r = R\)</span>, and make a 3D scatter plot so you can see them.  <code class="docutils literal notranslate"><span class="pre">GetPlot(d3=True)</span></code> gives you a 3D axis:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">charges</span> <span class="o">=</span> <span class="n">GetSpherePoints</span><span class="p">(</span><span class="mi">300</span><span class="p">)</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">GetPlot</span><span class="p">(</span><span class="n">d3</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">charges</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">charges</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">charges</span><span class="p">[:,</span> <span class="mi">2</span><span class="p">])</span>
+</pre></div>
+</div>
+<p>Since the helper only returns <em>approximately</em> <code class="docutils literal notranslate"><span class="pre">n</span></code> points, print <code class="docutils literal notranslate"><span class="pre">len(charges)</span></code> to see how many you
+actually got.</p>
+<p><strong>Deliverable</strong></p>
+<ul class="simple">
+<li><p>A 3D scatter plot of your charges on the sphere.</p></li>
+</ul>
+<div><img src="https://clark.physics.illinois.edu/246img/AnsStart.svg" width=200 align=left alt="Answer (start)"></img><br></div><p><em>Your answer here.</em></p>
+<div><img src="https://clark.physics.illinois.edu/246img/AnsEnd.svg" width=200 align=left alt="Answer (end)"></img><br></div></section>
+<section id="b-the-interior-is-screened">
+<h3>b. The interior is screened<a class="headerlink" href="#b-the-interior-is-screened" title="Link to this heading">#</a></h3>
+<p>Now <em>measure</em> the field these charges produce, using the <code class="docutils literal notranslate"><span class="pre">field</span></code> you wrote in Exercise 0 and the
+same tools as Exercise 0d.  Build a grid of points on the <span class="math notranslate nohighlight">\(z = 0\)</span> plane with <code class="docutils literal notranslate"><span class="pre">GetSquarePoints</span></code>,
+evaluate the field of your electrons there with <strong>one</strong> call to <code class="docutils literal notranslate"><span class="pre">field</span></code>, reshape the components back
+onto the grid, and draw the result with <code class="docutils literal notranslate"><span class="pre">PlotSlice</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">electron_locs</span> <span class="o">=</span> <span class="n">GetSpherePoints</span><span class="p">(</span><span class="mi">300</span><span class="p">)</span>
+<span class="n">field_locs</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">Y</span> <span class="o">=</span> <span class="n">GetSquarePoints</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">E</span> <span class="o">=</span> <span class="n">field</span><span class="p">(</span><span class="n">electron_locs</span><span class="p">,</span> <span class="n">field_locs</span><span class="p">,</span> <span class="n">Q_E</span><span class="p">)</span>
+<span class="c1">## now plot it. </span>
+</pre></div>
+</div>
+<p>Then make a line cut, as in Exercise 0c: use <code class="docutils literal notranslate"><span class="pre">GetLinePoints(-2,</span> <span class="pre">2,</span> <span class="pre">400)</span></code> to get points along the
+<span class="math notranslate nohighlight">\(x\)</span>-axis from outside the sphere, through it, and out the other side, and plot <span class="math notranslate nohighlight">\(|\mathbf E|\)</span> against
+<span class="math notranslate nohighlight">\(x\)</span> on a log <span class="math notranslate nohighlight">\(y\)</span>-scale.  (<code class="docutils literal notranslate"><span class="pre">GetSpherePoints</span></code> happens to put one charge exactly on the <span class="math notranslate nohighlight">\(+x\)</span> axis, so
+expect a sharp spike at <span class="math notranslate nohighlight">\(x = 1\)</span> that has no partner at <span class="math notranslate nohighlight">\(x = -1\)</span>.  It is just that one nearby charge.)</p>
+<p><strong>Deliverables</strong></p>
+<ul class="simple">
+<li><p>A 2D field map (<span class="math notranslate nohighlight">\(|\mathbf E|\)</span> with field lines) on the <span class="math notranslate nohighlight">\(z = 0\)</span> slice.</p></li>
+<li><p><span class="math notranslate nohighlight">\(|\mathbf E|\)</span> vs. <span class="math notranslate nohighlight">\(x\)</span> along the <span class="math notranslate nohighlight">\(x\)</span>-axis (log <span class="math notranslate nohighlight">\(y\)</span>-scale).</p></li>
+</ul>
+<p><strong>Question.</strong>  What is the field inside the sphere?  Why does it (nearly) vanish there even
+though every individual charge produces a <span class="math notranslate nohighlight">\(1/r^2\)</span> field?</p>
+<div><img src="https://clark.physics.illinois.edu/246img/AnsStart.svg" width=200 align=left alt="Answer (start)"></img><br></div><p><em>Your answer here.</em></p>
+<div><img src="https://clark.physics.illinois.edu/246img/AnsEnd.svg" width=200 align=left alt="Answer (end)"></img><br></div></section>
+</section>
+<section id="exercise-2-letting-the-charges-rearrange-themselves">
+<h2>Exercise 2. Letting the Charges Rearrange Themselves<a class="headerlink" href="#exercise-2-letting-the-charges-rearrange-themselves" title="Link to this heading">#</a></h2>
+<p>In the previous exercise, we placed the charges by hand.  In a real conductor the electrons find their optimal location themselves.  Let’s simulate that. To do that, we will let them charges (<span class="math notranslate nohighlight">\(m=1\)</span>) move under their dynamics but remove the kinetic energy so they don’t keep moving.  The relevant equations of motion written as two first-order equations for its position <span class="math notranslate nohighlight">\(\mathbf r_i\)</span> and velocity <span class="math notranslate nohighlight">\(\mathbf v_i\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[ \begin{aligned} \dot{\mathbf r}_i &amp;= \mathbf v_i, \cr \dot{\mathbf v}_i &amp;= Q_E\,\mathbf E(\mathbf r_i) \;-\; \gamma\,\mathbf v_i \;+\; \mathbf f_\mathrm{wall}(\mathbf r_i), \end{aligned} \tag{1} \]</div>
+<p>where <span class="math notranslate nohighlight">\(\mathbf E(\mathbf r)\)</span> is the electric field of all the electrons,</p>
+<div class="math notranslate nohighlight">
+\[ \mathbf E(\mathbf r) = K_E\, Q_E \sum_{j} \frac{\mathbf r - \mathbf r_j}{\left(|\mathbf r - \mathbf r_j|^2 + \epsilon\right)^{3/2}}, \]</div>
+<p>which is exactly what your <code class="docutils literal notranslate"><span class="pre">field</span></code> from Exercise 0 computes: <code class="docutils literal notranslate"><span class="pre">field(pos,</span> <span class="pre">pos,</span> <span class="pre">Q_E)</span></code> gives <span class="math notranslate nohighlight">\(\mathbf E\)</span> at every charge’s own position.</p>
+<p>The first term is the Coulomb force <span class="math notranslate nohighlight">\(\mathbf F = q\mathbf E\)</span> on electron <span class="math notranslate nohighlight">\(i\)</span> (with <span class="math notranslate nohighlight">\(m = 1\)</span>, force and acceleration are the same).  A charge’s own term in the sum is zero, since <span class="math notranslate nohighlight">\(\mathbf r_i - \mathbf r_i = 0\)</span>, so it feels no force from itself.  Because <span class="math notranslate nohighlight">\(Q_E \cdot Q_E = +1\)</span>, electrons repel.  The small softening <span class="math notranslate nohighlight">\(\epsilon = 10^{-4}\)</span> (the one built into <code class="docutils literal notranslate"><span class="pre">field</span></code>) keeps nearby pairs from blowing up.  The second term is a drag force (coefficient <span class="math notranslate nohighlight">\(\gamma\)</span>) that bleeds off kinetic energy so the system <em>relaxes</em> into its lowest-energy configuration instead of oscillating forever.  The third, <span class="math notranslate nohighlight">\(\mathbf f_\mathrm{wall}\)</span>, is a stiff restoring force (stiffness <span class="math notranslate nohighlight">\(k\)</span>) that keeps the charges inside the conductor.  Its form depends on the shape of the conductor, so we give it in each part below.  Because the wall is a stiff spring rather than a perfectly hard wall, charges pressed against it come to rest slightly outside it, where the spring balances their mutual repulsion (a few percent of <span class="math notranslate nohighlight">\(R\)</span> for the sphere, a bit more for the cube).  That is expected.</p>
+<p><strong>Common parameters.</strong>  These are the same in every part:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>quantity</p></th>
+<th class="head"><p>symbol</p></th>
+<th class="head"><p>in code</p></th>
+<th class="head"><p>value</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Coulomb constant</p></td>
+<td><p><span class="math notranslate nohighlight">\(K_E\)</span></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">K_E</span></code></p></td>
+<td><p><span class="math notranslate nohighlight">\(1\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p>conductor radius</p></td>
+<td><p><span class="math notranslate nohighlight">\(R\)</span></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">R</span></code></p></td>
+<td><p><span class="math notranslate nohighlight">\(1\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p>electron charge</p></td>
+<td><p><span class="math notranslate nohighlight">\(Q_E\)</span></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Q_E</span></code></p></td>
+<td><p><span class="math notranslate nohighlight">\(-1\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p>mass</p></td>
+<td><p><span class="math notranslate nohighlight">\(m\)</span></p></td>
+<td><p></p></td>
+<td><p><span class="math notranslate nohighlight">\(1\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p>softening (inside <code class="docutils literal notranslate"><span class="pre">field</span></code>)</p></td>
+<td><p><span class="math notranslate nohighlight">\(\epsilon\)</span></p></td>
+<td><p></p></td>
+<td><p><span class="math notranslate nohighlight">\(10^{-4}\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p>drag coefficient</p></td>
+<td><p><span class="math notranslate nohighlight">\(\gamma\)</span></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">DRAG</span></code></p></td>
+<td><p><span class="math notranslate nohighlight">\(2.0\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p>wall stiffness</p></td>
+<td><p><span class="math notranslate nohighlight">\(k\)</span></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">K_WALL</span></code></p></td>
+<td><p><span class="math notranslate nohighlight">\(3000\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p>initial velocity</p></td>
+<td><p><span class="math notranslate nohighlight">\(\mathbf v_i(0)\)</span></p></td>
+<td><p></p></td>
+<td><p><span class="math notranslate nohighlight">\(0\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p>saved frames</p></td>
+<td><p></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">t_eval</span></code></p></td>
+<td><p>60, evenly spaced from <span class="math notranslate nohighlight">\(t = 0\)</span> to <span class="math notranslate nohighlight">\(T_\mathrm{max}\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p>solver tolerance</p></td>
+<td><p></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">atol</span></code></p></td>
+<td><p><span class="math notranslate nohighlight">\(10^{-3}\)</span></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>Integrating with <code class="docutils literal notranslate"><span class="pre">solve_ivp</span></code>.</strong>  <code class="docutils literal notranslate"><span class="pre">solve_ivp</span></code> integrates a system <span class="math notranslate nohighlight">\(\dot{\mathbf y} = f(t, \mathbf y)\)</span>
+where <span class="math notranslate nohighlight">\(\mathbf y\)</span> is a single flat array.  So we pack the positions and velocities of all <span class="math notranslate nohighlight">\(N\)</span> charges
+into one <em>state</em> vector,</p>
+<div class="math notranslate nohighlight">
+\[ \texttt{state} = [\,\underbrace{x_0,y_0,z_0,\,x_1,y_1,z_1,\dots}_{3N\ \text{positions}},\ \underbrace{v_{x0},v_{y0},v_{z0},\dots}_{3N\ \text{velocities}}\,], \]</div>
+<p>and write a right-hand-side function <code class="docutils literal notranslate"><span class="pre">rhs(t,</span> <span class="pre">state)</span></code> that returns <span class="math notranslate nohighlight">\([\dot{\mathbf r},\ \dot{\mathbf v}]\)</span>
+from Eq. (1), packed the same way.  The call is</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">t_eval</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">T_MAX</span><span class="p">,</span> <span class="mi">60</span><span class="p">)</span>       <span class="c1"># the 60 times at which to save the state</span>
+<span class="n">sol</span> <span class="o">=</span> <span class="n">solve_ivp</span><span class="p">(</span><span class="n">rhs</span><span class="p">,</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">T_MAX</span><span class="p">),</span> <span class="n">state0</span><span class="p">,</span> <span class="n">t_eval</span><span class="o">=</span><span class="n">t_eval</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s1">'RK45'</span><span class="p">,</span> <span class="n">atol</span><span class="o">=</span><span class="mf">1e-3</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>where <code class="docutils literal notranslate"><span class="pre">state0</span></code> is the initial state.  We use <code class="docutils literal notranslate"><span class="pre">atol=1e-3</span></code> rather than the default because positions
+and velocities are of order 1, so this is plenty accurate and much faster.  The result holds the
+saved times in <code class="docutils literal notranslate"><span class="pre">sol.t</span></code> (length 60) and the saved states in <code class="docutils literal notranslate"><span class="pre">sol.y</span></code>, an array of shape <code class="docutils literal notranslate"><span class="pre">(6N,</span> <span class="pre">60)</span></code>:
+<strong>column <code class="docutils literal notranslate"><span class="pre">k</span></code> is the full state at time <code class="docutils literal notranslate"><span class="pre">sol.t[k]</span></code></strong>.  So, for example, the positions at the last
+saved time are <code class="docutils literal notranslate"><span class="pre">sol.y[:3*N,</span> <span class="pre">-1].reshape(N,</span> <span class="pre">3)</span></code>.</p>
+<p>The number of charges <span class="math notranslate nohighlight">\(N\)</span>, the run time <span class="math notranslate nohighlight">\(T_\mathrm{max}\)</span> (<code class="docutils literal notranslate"><span class="pre">T_MAX</span></code>), and anything else specific to a
+geometry are given in each part.  The same template works for every geometry below — only the
+<strong>wall force</strong> and the <strong>initial positions</strong> change, plus (in part b) an external charge added to
+<span class="math notranslate nohighlight">\(\mathbf E\)</span>.</p>
+<section id="a-charges-in-a-solid-metal-ball">
+<h3>a. Charges in a solid metal ball<a class="headerlink" href="#a-charges-in-a-solid-metal-ball" title="Link to this heading">#</a></h3>
+<p><strong>Step 1 — Set up and run the dynamics.</strong></p>
+<p>Write the right-hand side <code class="docutils literal notranslate"><span class="pre">rhs(t,</span> <span class="pre">state)</span></code> of Eq. (1) for charges inside a ball of radius <span class="math notranslate nohighlight">\(R\)</span>.  Here
+is the skeleton: the first two lines unpack the state, and the last line packs the answer back up.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">rhs</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">state</span><span class="p">):</span>
+    <span class="n">pos</span> <span class="o">=</span> <span class="n">state</span><span class="p">[:</span><span class="mi">3</span><span class="o">*</span><span class="n">N</span><span class="p">]</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>     <span class="c1"># (N, 3): row i is r_i</span>
+    <span class="n">vel</span> <span class="o">=</span> <span class="n">state</span><span class="p">[</span><span class="mi">3</span><span class="o">*</span><span class="n">N</span><span class="p">:]</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>     <span class="c1"># (N, 3): row i is v_i</span>
+    <span class="n">acc</span> <span class="o">=</span> <span class="o">...</span>                           <span class="c1"># (N, 3): row i is dv_i/dt from Eq. (1)</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">([</span><span class="n">vel</span><span class="o">.</span><span class="n">ravel</span><span class="p">(),</span> <span class="n">acc</span><span class="o">.</span><span class="n">ravel</span><span class="p">()])</span>
+</pre></div>
+</div>
+<p>Build <code class="docutils literal notranslate"><span class="pre">acc</span></code> one term of Eq. (1) at a time:</p>
+<ul>
+<li><p><strong>Coulomb force.</strong>  <code class="docutils literal notranslate"><span class="pre">field(pos,</span> <span class="pre">pos,</span> <span class="pre">Q_E)</span></code> is the field of all the electrons, evaluated at every
+electron.  Multiply by the charge <span class="math notranslate nohighlight">\(Q_E\)</span> to get the force.</p></li>
+<li><p><strong>Drag.</strong>  Subtract <code class="docutils literal notranslate"><span class="pre">DRAG*vel</span></code>.</p></li>
+<li><p><strong>Wall.</strong>  A <em>one-sided</em> wall that pushes a charge back only when it strays outside (<span class="math notranslate nohighlight">\(r &gt; R\)</span>).
+Writing <span class="math notranslate nohighlight">\(r_i = |\mathbf r_i|\)</span> and <span class="math notranslate nohighlight">\(\hat{\mathbf r}_i = \mathbf r_i / r_i\)</span>,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split} \mathbf f_\mathrm{wall}(\mathbf r_i) = \begin{cases} -k\,(r_i - R)\,\hat{\mathbf r}_i &amp; r_i &gt; R \\ 0 &amp; r_i \le R. \end{cases} \end{split}\]</div>
+<p>This is the first time we need an “if” applied to every charge at once, which <code class="docutils literal notranslate"><span class="pre">np.where</span></code> does:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">r</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">pos</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">keepdims</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>          <span class="c1"># (N, 1): distance of each charge</span>
+<span class="n">acc</span> <span class="o">+=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">r</span> <span class="o">&gt;</span> <span class="n">R</span><span class="p">,</span> <span class="o">-</span><span class="n">K_WALL</span><span class="o">*</span><span class="p">(</span><span class="n">r</span> <span class="o">-</span> <span class="n">R</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">pos</span><span class="o">/</span><span class="n">r</span><span class="p">),</span> <span class="mf">0.0</span><span class="p">)</span>     <span class="c1"># wall force where r &gt; R, else 0</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">keepdims=True</span></code> keeps <code class="docutils literal notranslate"><span class="pre">r</span></code> as a column, so <code class="docutils literal notranslate"><span class="pre">pos/r</span></code> divides each row by that charge’s distance
+(giving <span class="math notranslate nohighlight">\(\hat{\mathbf r}_i\)</span>).  <code class="docutils literal notranslate"><span class="pre">np.where(condition,</span> <span class="pre">a,</span> <span class="pre">b)</span></code> takes <code class="docutils literal notranslate"><span class="pre">a</span></code> where the condition is true and
+<code class="docutils literal notranslate"><span class="pre">b</span></code> where it is false.</p>
+</li>
+</ul>
+<p><strong>Initial conditions.</strong>  Start the charges at random positions <em>throughout the volume</em> of the ball,
+at rest.  <code class="docutils literal notranslate"><span class="pre">GetBallPoints(N,</span> <span class="pre">R)</span></code> returns such positions as an <code class="docutils literal notranslate"><span class="pre">(N,</span> <span class="pre">3)</span></code> array; flatten it with <code class="docutils literal notranslate"><span class="pre">.ravel()</span></code>
+to build the initial state:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">init_pos</span> <span class="o">=</span> <span class="n">GetBallPoints</span><span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="n">R</span><span class="p">)</span>
+<span class="n">state0</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">([</span><span class="n">init_pos</span><span class="o">.</span><span class="n">ravel</span><span class="p">(),</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="mi">3</span><span class="o">*</span><span class="n">N</span><span class="p">)])</span>
+</pre></div>
+</div>
+<p>Then integrate with <code class="docutils literal notranslate"><span class="pre">solve_ivp</span></code> as described above, and print <code class="docutils literal notranslate"><span class="pre">sol.success</span></code> to check that the
+integration finished.</p>
+<p><strong>Parameters.</strong>  <span class="math notranslate nohighlight">\(N = 150\)</span> charges, <span class="math notranslate nohighlight">\(T_\mathrm{max} = 8\)</span> (plus <code class="docutils literal notranslate"><span class="pre">DRAG</span></code> and <code class="docutils literal notranslate"><span class="pre">K_WALL</span></code> from the common
+parameters table).</p>
+<div><img src="https://clark.physics.illinois.edu/246img/AnsStart.svg" width=200 align=left alt="Answer (start)"></img><br></div><p><em>Your answer here.</em></p>
+<div><img src="https://clark.physics.illinois.edu/246img/AnsEnd.svg" width=200 align=left alt="Answer (end)"></img><br></div><p><strong>Step 2 — Did the charges move to the surface?</strong></p>
+<p>Pull the initial and final positions out of the solution (column <code class="docutils literal notranslate"><span class="pre">0</span></code> and the last column of
+<code class="docutils literal notranslate"><span class="pre">sol.y</span></code>):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">start_pos</span> <span class="o">=</span> <span class="n">sol</span><span class="o">.</span><span class="n">y</span><span class="p">[:</span><span class="mi">3</span><span class="o">*</span><span class="n">N</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="n">final_pos</span> <span class="o">=</span> <span class="n">sol</span><span class="o">.</span><span class="n">y</span><span class="p">[:</span><span class="mi">3</span><span class="o">*</span><span class="n">N</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Make a 3D scatter plot of the initial and final positions side by side.  <code class="docutils literal notranslate"><span class="pre">add_subplot(121,</span> <span class="pre">...)</span></code> is
+the left panel of a 1-row, 2-column figure, and <code class="docutils literal notranslate"><span class="pre">add_subplot(122,</span> <span class="pre">...)</span></code> the right:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">11</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+<span class="n">ax1</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">121</span><span class="p">,</span> <span class="n">projection</span><span class="o">=</span><span class="s1">'3d'</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">start_pos</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">start_pos</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">start_pos</span><span class="p">[:,</span> <span class="mi">2</span><span class="p">],</span> <span class="n">s</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">'tab:gray'</span><span class="p">)</span>
+<span class="n">ax2</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">122</span><span class="p">,</span> <span class="n">projection</span><span class="o">=</span><span class="s1">'3d'</span><span class="p">)</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">final_pos</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">final_pos</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">final_pos</span><span class="p">[:,</span> <span class="mi">2</span><span class="p">],</span> <span class="n">s</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">'tab:blue'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Then compute each charge’s distance from the center, <span class="math notranslate nohighlight">\(r = |\mathbf r|\)</span>, with
+<code class="docutils literal notranslate"><span class="pre">np.linalg.norm(start_pos,</span> <span class="pre">axis=1)</span></code> (and the same for <code class="docutils literal notranslate"><span class="pre">final_pos</span></code>), and histogram the initial and
+final radii on the same axes.  Use the same bins for both, <code class="docutils literal notranslate"><span class="pre">the_bins</span> <span class="pre">=</span> <span class="pre">list(np.linspace(0,</span> <span class="pre">2,</span> <span class="pre">20))</span></code>,
+so they can be compared: call <code class="docutils literal notranslate"><span class="pre">ax.hist(r_start,</span> <span class="pre">bins=the_bins)</span></code> and then <code class="docutils literal notranslate"><span class="pre">ax.hist(r_final,</span> <span class="pre">bins=the_bins)</span></code>.</p>
+<p><strong>Deliverables</strong></p>
+<ul class="simple">
+<li><p>3D scatter: initial (interior) vs. final positions.</p></li>
+<li><p>Histogram of initial and final radii.</p></li>
+</ul>
+<p><strong>Question.</strong>  Where do the charges end up, and why?</p>
+<div><img src="https://clark.physics.illinois.edu/246img/AnsStart.svg" width=200 align=left alt="Answer (start)"></img><br></div><p><em>Your answer here.</em></p>
+<div><img src="https://clark.physics.illinois.edu/246img/AnsEnd.svg" width=200 align=left alt="Answer (end)"></img><br></div><p><strong>Step 3 — Watch it happen.</strong>  Animate the charges migrating from the interior to the surface.
+The helper <code class="docutils literal notranslate"><span class="pre">animate_charges</span></code> turns the saved frames of a <code class="docutils literal notranslate"><span class="pre">solve_ivp</span></code> solution into an animation:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">animate_charges</span><span class="p">(</span><span class="n">sol</span><span class="p">,</span> <span class="n">N</span><span class="p">,</span> <span class="n">lim</span><span class="o">=</span><span class="mf">1.3</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s1">'Charges migrating to the surface'</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">lim</span></code> sets the axis limits (<span class="math notranslate nohighlight">\(\pm\)</span><code class="docutils literal notranslate"><span class="pre">lim</span></code> in each direction).  Make it the last line of the cell so the
+animation displays; it takes a few seconds to build.</p>
+<p><strong>Deliverable</strong></p>
+<ul class="simple">
+<li><p>The animation.</p></li>
+</ul>
+<div><img src="https://clark.physics.illinois.edu/246img/AnsStart.svg" width=200 align=left alt="Answer (start)"></img><br></div><p><em>Your answer here.</em></p>
+<div><img src="https://clark.physics.illinois.edu/246img/AnsEnd.svg" width=200 align=left alt="Answer (end)"></img><br></div><p><strong>Step 4 — Did the system actually relax?</strong></p>
+<p>The drag removes energy, so the total energy should fall as the electrons move into a screening
+configuration, and then flatten out once they have settled.  Check this by computing the kinetic
+and potential energy at every saved frame.  Loop over the frames, pulling out the positions and
+velocities of frame <code class="docutils literal notranslate"><span class="pre">k</span></code> from column <code class="docutils literal notranslate"><span class="pre">k</span></code> of <code class="docutils literal notranslate"><span class="pre">sol.y</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">num_frames</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">sol</span><span class="o">.</span><span class="n">t</span><span class="p">)</span>
+<span class="n">ke</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">num_frames</span><span class="p">)</span>
+<span class="n">pe</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">num_frames</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num_frames</span><span class="p">):</span>
+    <span class="n">pos</span> <span class="o">=</span> <span class="n">sol</span><span class="o">.</span><span class="n">y</span><span class="p">[:</span><span class="mi">3</span><span class="o">*</span><span class="n">N</span><span class="p">,</span> <span class="n">k</span><span class="p">]</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>     <span class="c1"># positions at frame k (first 3N entries of the state)</span>
+    <span class="n">vel</span> <span class="o">=</span> <span class="n">sol</span><span class="o">.</span><span class="n">y</span><span class="p">[</span><span class="mi">3</span><span class="o">*</span><span class="n">N</span><span class="p">:,</span> <span class="n">k</span><span class="p">]</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>     <span class="c1"># velocities at frame k (last 3N entries)</span>
+    <span class="c1"># ke[k] = ...</span>
+    <span class="c1"># pe[k] = ...</span>
+</pre></div>
+</div>
+<ul>
+<li><p><strong>Kinetic energy.</strong>  <span class="math notranslate nohighlight">\(K = \sum_i \tfrac12 m |\mathbf v_i|^2\)</span>, with <span class="math notranslate nohighlight">\(m = 1\)</span>.</p></li>
+<li><p><strong>Potential energy.</strong>  The Coulomb energy is a sum over pairs,
+<span class="math notranslate nohighlight">\(U = \sum_{i&lt;j} K_E\, q_i q_j / |\mathbf r_i - \mathbf r_j|\)</span>.  Rather than looping over pairs, you
+can get it from the forces you already know how to compute.  For Coulomb interactions,</p>
+<div class="math notranslate nohighlight">
+\[ U = \sum_i \mathbf r_i \cdot \mathbf F_i, \qquad \mathbf F_i = Q_E\,\mathbf E(\mathbf r_i). \]</div>
+<p>In code, compute the forces with <code class="docutils literal notranslate"><span class="pre">field</span></code> as in your <code class="docutils literal notranslate"><span class="pre">rhs</span></code>, then
+<code class="docutils literal notranslate"><span class="pre">np.sum(pos*F)</span></code> adds up all the dot products <span class="math notranslate nohighlight">\(\mathbf r_i\cdot\mathbf F_i\)</span> at once.  (Because <code class="docutils literal notranslate"><span class="pre">field</span></code>
+is softened, this agrees with the exact pair sum to about 0.1%.)</p>
+</li>
+</ul>
+<p>Plot two graphs side by side, using <code class="docutils literal notranslate"><span class="pre">fig,</span> <span class="pre">axes</span> <span class="pre">=</span> <span class="pre">GetPlot(1,</span> <span class="pre">2,</span> <span class="pre">w=11,</span> <span class="pre">h=4)</span></code> (then <code class="docutils literal notranslate"><span class="pre">axes[0]</span></code> is the
+left panel and <code class="docutils literal notranslate"><span class="pre">axes[1]</span></code> the right):</p>
+<ul class="simple">
+<li><p>left: the potential energy and the total energy (kinetic + potential) vs. time (<code class="docutils literal notranslate"><span class="pre">sol.t</span></code>);</p></li>
+<li><p>right: the kinetic energy vs. time on a log <span class="math notranslate nohighlight">\(y\)</span>-scale, since it falls by orders of magnitude.</p></li>
+</ul>
+<p>A few things you will notice.  The kinetic energy at <span class="math notranslate nohighlight">\(t = 0\)</span> is exactly zero (the charges start at
+rest), so the log plot can’t show that first point.  Late in the run the kinetic energy levels off
+around <span class="math notranslate nohighlight">\(0.1\)</span> instead of falling forever; that is numerical jitter from the solver tolerance and
+doesn’t matter.  And our “total” ignores the small energy stored in the springy wall (about 1% of
+the total), which is why it isn’t exactly the conserved quantity.</p>
+<p><strong>Deliverables</strong></p>
+<ul class="simple">
+<li><p>The two energy-vs-time graphs.</p></li>
+<li><p>The total energy at the start and at the end of the run.</p></li>
+</ul>
+<p><strong>Question.</strong>  How can you tell from these plots that the charges have finished relaxing?</p>
+<div><img src="https://clark.physics.illinois.edu/246img/AnsStart.svg" width=200 align=left alt="Answer (start)"></img><br></div><p><em>Your answer here.</em></p>
+<div><img src="https://clark.physics.illinois.edu/246img/AnsEnd.svg" width=200 align=left alt="Answer (end)"></img><br></div><p><strong>Step 5 — Is the inside screened?</strong></p>
+<p>Repeat the screening checks from Exercise 1b on both the <em>initial</em> and the <em>final</em> configuration,
+using <code class="docutils literal notranslate"><span class="pre">start_pos</span></code> and <code class="docutils literal notranslate"><span class="pre">final_pos</span></code> as the charge positions:</p>
+<ul class="simple">
+<li><p>a field map on the <span class="math notranslate nohighlight">\(z = 0\)</span> slice (<code class="docutils literal notranslate"><span class="pre">GetSquarePoints(-2,</span> <span class="pre">2)</span></code> and <code class="docutils literal notranslate"><span class="pre">PlotSlice</span></code>) for each, and</p></li>
+<li><p><span class="math notranslate nohighlight">\(|\mathbf E|\)</span> along the <span class="math notranslate nohighlight">\(x\)</span>-axis (<code class="docutils literal notranslate"><span class="pre">GetLinePoints(-2,</span> <span class="pre">2,</span> <span class="pre">400)</span></code>) for both, drawn as two curves on the
+same log-scale plot.</p></li>
+</ul>
+<p><strong>Deliverables</strong></p>
+<ul class="simple">
+<li><p>Field slices for the initial and final configurations.</p></li>
+<li><p><span class="math notranslate nohighlight">\(|\mathbf E|\)</span> vs. <span class="math notranslate nohighlight">\(x\)</span> for the initial and final configurations.</p></li>
+</ul>
+<p><strong>Question.</strong>  How does the field inside the ball compare before and after the charges relax?</p>
+<div><img src="https://clark.physics.illinois.edu/246img/AnsStart.svg" width=200 align=left alt="Answer (start)"></img><br></div><p><em>Your answer here.</em></p>
+<div><img src="https://clark.physics.illinois.edu/246img/AnsEnd.svg" width=200 align=left alt="Answer (end)"></img><br></div></section>
+<section id="b-a-conductor-in-an-external-field">
+<h3>b. A conductor in an external field<a class="headerlink" href="#b-a-conductor-in-an-external-field" title="Link to this heading">#</a></h3>
+<p>So far the electrons have relaxed without any external charge or field.  Now we bring up an
+external point charge <span class="math notranslate nohighlight">\(Q_\mathrm{ext}\)</span> off to one side and watch the surface electrons rearrange to
+cancel its field inside the conductor.  Pin the electrons to the spherical <em>surface</em> (a two-sided
+wall holds them at <span class="math notranslate nohighlight">\(r = R\)</span>).  As the electrons rearrange, they pile up so as to cancel the external
+field everywhere inside the sphere — <em>induced</em> screening.</p>
+<p>We use a <strong>positive</strong> external charge so the electrons are <em>attracted</em> to it: they crowd onto the
+near side (making it negative) and leave the far side electron-poor (relatively positive).</p>
+<p><strong>Step 1 — Set up and run.</strong>  The field each electron feels now has two pieces: the field of the
+other electrons, as before, plus the field of the fixed external charge <span class="math notranslate nohighlight">\(Q_\mathrm{ext}\)</span> at
+<span class="math notranslate nohighlight">\(\mathbf r_\mathrm{ext}\)</span>,</p>
+<div class="math notranslate nohighlight">
+\[ \mathbf E(\mathbf r) \;\to\; \mathbf E(\mathbf r) + K_E\, Q_\mathrm{ext}\, \frac{\mathbf r - \mathbf r_\mathrm{ext}}{\left(|\mathbf r - \mathbf r_\mathrm{ext}|^2 + \epsilon\right)^{3/2}}. \]</div>
+<p>That is just one more call to your <code class="docutils literal notranslate"><span class="pre">field</span></code>, with a single “charge” at <code class="docutils literal notranslate"><span class="pre">POS_EXT</span></code> carrying charge
+<code class="docutils literal notranslate"><span class="pre">Q_EXT</span></code>: <code class="docutils literal notranslate"><span class="pre">field([POS_EXT],</span> <span class="pre">pos,</span> <span class="pre">Q_EXT)</span></code>.  Add it to the electrons’ field and multiply the total by
+<span class="math notranslate nohighlight">\(Q_E\)</span> to get the force, exactly as in part (a).  The sign takes care of itself: <span class="math notranslate nohighlight">\(Q_E &lt; 0\)</span> and
+<span class="math notranslate nohighlight">\(Q_\mathrm{ext} &gt; 0\)</span>, so the force pulls the electrons toward the external charge.</p>
+<p>Instead of part (a)’s one-sided wall, use a <em>two-sided</em> spring that holds the charges on the shell
+<span class="math notranslate nohighlight">\(r = R\)</span> whether they stray outside or inside:</p>
+<div class="math notranslate nohighlight">
+\[ \mathbf f_\mathrm{wall}(\mathbf r_i) = -k\,(r_i - R)\,\hat{\mathbf r}_i \quad \text{(for all } r_i\text{)}. \]</div>
+<p>In code this is part (a)’s wall without the <code class="docutils literal notranslate"><span class="pre">np.where</span></code>.  Write a new <code class="docutils literal notranslate"><span class="pre">rhs</span></code> with the Coulomb force
+(electrons plus external charge), drag, and this wall.</p>
+<p>Start the charges spread evenly on the sphere, at rest.  Because <code class="docutils literal notranslate"><span class="pre">GetSpherePoints</span></code> returns only
+<em>approximately</em> the number you ask for, reset <code class="docutils literal notranslate"><span class="pre">N</span></code> to the number you actually got before building the
+state:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">charges</span> <span class="o">=</span> <span class="n">GetSpherePoints</span><span class="p">(</span><span class="n">N</span><span class="p">)</span>
+<span class="n">N</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">charges</span><span class="p">)</span>
+<span class="n">state0</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">([</span><span class="n">charges</span><span class="o">.</span><span class="n">ravel</span><span class="p">(),</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="mi">3</span><span class="o">*</span><span class="n">N</span><span class="p">)])</span>
+</pre></div>
+</div>
+<p><strong>Parameters.</strong>  <span class="math notranslate nohighlight">\(N \approx 500\)</span> charges (ask <code class="docutils literal notranslate"><span class="pre">GetSpherePoints</span></code> for 500),
+<span class="math notranslate nohighlight">\(Q_\mathrm{ext} = 20\)</span> (<code class="docutils literal notranslate"><span class="pre">Q_EXT</span></code>) at <span class="math notranslate nohighlight">\(\mathbf r_\mathrm{ext} = (1.6, 0, 0)\)</span>
+(<code class="docutils literal notranslate"><span class="pre">POS_EXT</span> <span class="pre">=</span> <span class="pre">np.array([1.6,</span> <span class="pre">0.0,</span> <span class="pre">0.0])</span></code>), <span class="math notranslate nohighlight">\(T_\mathrm{max} = 6\)</span>.</p>
+<div><img src="https://clark.physics.illinois.edu/246img/AnsStart.svg" width=200 align=left alt="Answer (start)"></img><br></div><p><em>Your answer here.</em></p>
+<div><img src="https://clark.physics.illinois.edu/246img/AnsEnd.svg" width=200 align=left alt="Answer (end)"></img><br></div><p><strong>Step 2 — Look at the induced distribution and the field.</strong></p>
+<p>Pull out the final positions as in part (a) (<code class="docutils literal notranslate"><span class="pre">final_pos</span> <span class="pre">=</span> <span class="pre">sol.y[:3*N,</span> <span class="pre">-1].reshape(N,</span> <span class="pre">3)</span></code>) and plot
+them in three dimensions.  Color each charge by its <span class="math notranslate nohighlight">\(x\)</span>-coordinate, add a color bar, and mark the
+external charge with a star.  The bunching is subtle (the near side is only about 30% denser), so
+look for more closely spaced dots near the star:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mf">5.5</span><span class="p">))</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">111</span><span class="p">,</span> <span class="n">projection</span><span class="o">=</span><span class="s1">'3d'</span><span class="p">)</span>
+<span class="n">p</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">final_pos</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">final_pos</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">final_pos</span><span class="p">[:,</span> <span class="mi">2</span><span class="p">],</span>
+               <span class="n">c</span><span class="o">=</span><span class="n">final_pos</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">'coolwarm'</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">14</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="o">*</span><span class="n">POS_EXT</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">'k'</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">'*'</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">200</span><span class="p">)</span>     <span class="c1"># *POS_EXT unpacks to x, y, z</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">'x'</span><span class="p">,</span> <span class="n">shrink</span><span class="o">=</span><span class="mf">0.6</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Next, make a field map on the <span class="math notranslate nohighlight">\(z = 0\)</span> slice that <em>includes</em> the external charge: the total field is
+<code class="docutils literal notranslate"><span class="pre">field(final_pos,</span> <span class="pre">field_locs,</span> <span class="pre">Q_E)</span> <span class="pre">+</span> <span class="pre">field([POS_EXT],</span> <span class="pre">field_locs,</span> <span class="pre">Q_EXT)</span></code>.  Use a slightly larger
+square, <code class="docutils literal notranslate"><span class="pre">GetSquarePoints(-2.5,</span> <span class="pre">2.5)</span></code>, so the external charge at <span class="math notranslate nohighlight">\(x = 1.6\)</span> is well inside the picture.</p>
+<p>Finally, plot <span class="math notranslate nohighlight">\(|\mathbf E|\)</span> along the <span class="math notranslate nohighlight">\(x\)</span>-axis <em>inside</em> the sphere, at
+<code class="docutils literal notranslate"><span class="pre">field_locs,</span> <span class="pre">xs</span> <span class="pre">=</span> <span class="pre">GetLinePoints(-1.,</span> <span class="pre">1.,</span> <span class="pre">400)</span></code>, for two cases on the same axes: the total field
+(electrons plus external charge) and the bare field of the external charge alone.  Use a <em>linear</em>
+<span class="math notranslate nohighlight">\(y\)</span>-scale here.  Inside the sphere, the conductor should strongly suppress the field.  Ignore the
+last <span class="math notranslate nohighlight">\(\approx 0.1\)</span> at each end of the line: there you are within one charge spacing of individual
+surface charges, so the total field shoots up.</p>
+<p><strong>Deliverables</strong></p>
+<ul class="simple">
+<li><p>3D scatter of the induced distribution (with the external charge marked).</p></li>
+<li><p>Field-map slice including the external charge.</p></li>
+<li><p><span class="math notranslate nohighlight">\(|\mathbf E|\)</span> inside the sphere, with vs. without the conductor.</p></li>
+</ul>
+<p><strong>Question.</strong>  Where do the electrons bunch up, and how well does the conductor cancel the external
+field inside the sphere?</p>
+<div><img src="https://clark.physics.illinois.edu/246img/AnsStart.svg" width=200 align=left alt="Answer (start)"></img><br></div><p><em>Your answer here.</em></p>
+<div><img src="https://clark.physics.illinois.edu/246img/AnsEnd.svg" width=200 align=left alt="Answer (end)"></img><br></div><p><strong>Step 3 — Watch it happen.</strong>  Use <code class="docutils literal notranslate"><span class="pre">animate_charges</span></code> as in part (a) to animate the charges sliding
+around to their induced positions.</p>
+<p><strong>Deliverable</strong></p>
+<ul class="simple">
+<li><p>The animation.</p></li>
+</ul>
+<div><img src="https://clark.physics.illinois.edu/246img/AnsStart.svg" width=200 align=left alt="Answer (start)"></img><br></div><p><em>Your answer here.</em></p>
+<div><img src="https://clark.physics.illinois.edu/246img/AnsEnd.svg" width=200 align=left alt="Answer (end)"></img><br></div></section>
+<section id="c-a-hemispherical-conductor">
+<h3>c. A hemispherical conductor<a class="headerlink" href="#c-a-hemispherical-conductor" title="Link to this heading">#</a></h3>
+<p>The surface arrangement isn’t special to spheres.  Take a solid <em>hemisphere</em> (the top half of the
+ball, <span class="math notranslate nohighlight">\(z \ge 0\)</span>) and let charges relax inside it.  Now there are two walls: the curved cap <span class="math notranslate nohighlight">\(r = R\)</span>
+and the flat base <span class="math notranslate nohighlight">\(z = 0\)</span>.  The charges should coat the curved surface and the flat disk, again
+leaving the interior screened.</p>
+<p>Write <code class="docutils literal notranslate"><span class="pre">rhs</span></code> with <strong>both</strong> constraints: part (a)’s one-sided spherical wall for <span class="math notranslate nohighlight">\(r &gt; R\)</span>, plus a floor
+that pushes up whenever <span class="math notranslate nohighlight">\(z &lt; 0\)</span>,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split} \mathbf f_\mathrm{wall}(\mathbf r_i) = \underbrace{\begin{cases} -k\,(r_i - R)\,\hat{\mathbf r}_i &amp; r_i &gt; R \\ 0 &amp; r_i \le R \end{cases}}_{\text{curved cap}} \;+\; \underbrace{\begin{cases} -k\,z_i\,\hat{\mathbf z} &amp; z_i &lt; 0 \\ 0 &amp; z_i \ge 0 \end{cases}}_{\text{flat floor}}. \end{split}\]</div>
+<p>The curved cap is exactly part (a)’s wall.  The floor acts only on the <span class="math notranslate nohighlight">\(z\)</span>-component of the
+acceleration, the third column of <code class="docutils literal notranslate"><span class="pre">acc</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">z</span> <span class="o">=</span> <span class="n">pos</span><span class="p">[:,</span> <span class="mi">2</span><span class="p">]</span>
+<span class="n">acc</span><span class="p">[:,</span> <span class="mi">2</span><span class="p">]</span> <span class="o">+=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">z</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="n">K_WALL</span><span class="o">*</span><span class="n">z</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Start the charges at random positions inside the hemisphere, at rest.  <code class="docutils literal notranslate"><span class="pre">GetHemispherePoints(N,</span> <span class="pre">R)</span></code>
+returns them as an <code class="docutils literal notranslate"><span class="pre">(N,</span> <span class="pre">3)</span></code> array (just like <code class="docutils literal notranslate"><span class="pre">GetBallPoints</span></code>), so use <code class="docutils literal notranslate"><span class="pre">.ravel()</span></code> when you build
+<code class="docutils literal notranslate"><span class="pre">state0</span></code>.  Then run it and check the result:</p>
+<ul class="simple">
+<li><p>a 3D scatter of the final positions;</p></li>
+<li><p>a field map on the <span class="math notranslate nohighlight">\(x\)</span>–<span class="math notranslate nohighlight">\(z\)</span> slice (the plane <span class="math notranslate nohighlight">\(y = 0\)</span>, which cuts through the flat base).  As in
+Exercise 0d, use <code class="docutils literal notranslate"><span class="pre">GetSquarePoints(-2,</span> <span class="pre">2,</span> <span class="pre">dir='xz')</span></code> and pass <code class="docutils literal notranslate"><span class="pre">Ez</span></code> (not <code class="docutils literal notranslate"><span class="pre">Ey</span></code>) to <code class="docutils literal notranslate"><span class="pre">PlotSlice</span></code> as the
+second in-plane component;</p></li>
+<li><p>an animation with <code class="docutils literal notranslate"><span class="pre">animate_charges</span></code>.</p></li>
+</ul>
+<p><strong>Parameters.</strong>  <span class="math notranslate nohighlight">\(N = 150\)</span> charges, <span class="math notranslate nohighlight">\(T_\mathrm{max} = 8\)</span>.</p>
+<p><strong>Deliverables</strong></p>
+<ul class="simple">
+<li><p>3D scatter of the relaxed charges.</p></li>
+<li><p>Field map on the <span class="math notranslate nohighlight">\(x\)</span>–<span class="math notranslate nohighlight">\(z\)</span> slice.</p></li>
+<li><p>The animation.</p></li>
+</ul>
+<p><strong>Question.</strong>  Where does the charge sit, and where does it pile up most?  Is the interior
+screened?  (The contrast is weaker than for the ball, because no point inside a hemisphere is very
+far from the surface charges.)</p>
+<div><img src="https://clark.physics.illinois.edu/246img/AnsStart.svg" width=200 align=left alt="Answer (start)"></img><br></div><p><em>Your answer here.</em></p>
+<div><img src="https://clark.physics.illinois.edu/246img/AnsEnd.svg" width=200 align=left alt="Answer (end)"></img><br></div></section>
+<section id="d-a-cubic-conductor">
+<h3>d. A cubic conductor<a class="headerlink" href="#d-a-cubic-conductor" title="Link to this heading">#</a></h3>
+<p>We will now do a conductor with corners - a cube.   Confine the charges to a cube of side <span class="math notranslate nohighlight">\(L\)</span> (walls at
+<span class="math notranslate nohighlight">\(x, y, z = \pm L/2\)</span>) and let them relax.  Conductors with sharp features concentrate charge there —
+you should find the charges crowding onto the faces and especially piling up at the <strong>edges and
+corners</strong>, where the field just outside is largest.</p>
+<p>Write <code class="docutils literal notranslate"><span class="pre">rhs</span></code> with a one-sided wall on each of the six faces.  Each face pushes back only along its
+own axis, so apply this to each component <span class="math notranslate nohighlight">\(x_i\)</span>, <span class="math notranslate nohighlight">\(y_i\)</span>, <span class="math notranslate nohighlight">\(z_i\)</span> separately (shown for <span class="math notranslate nohighlight">\(x\)</span>):</p>
+<div class="math notranslate nohighlight">
+\[\begin{split} f_{\mathrm{wall},x}(\mathbf r_i) = \begin{cases} -k\,(x_i - L/2) &amp; x_i &gt; L/2 \\ -k\,(x_i + L/2) &amp; x_i &lt; -L/2 \\ 0 &amp; \text{otherwise.} \end{cases} \end{split}\]</div>
+<p>Because each component is treated the same way, you don’t need to split <code class="docutils literal notranslate"><span class="pre">pos</span></code> into columns:
+<code class="docutils literal notranslate"><span class="pre">np.where</span></code> works element by element on the whole <code class="docutils literal notranslate"><span class="pre">(N,</span> <span class="pre">3)</span></code> array.  For example, the three faces on the
+positive side are</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">acc</span> <span class="o">+=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">pos</span> <span class="o">&gt;</span> <span class="n">SIDE</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="n">K_WALL</span><span class="o">*</span><span class="p">(</span><span class="n">pos</span> <span class="o">-</span> <span class="n">SIDE</span><span class="o">/</span><span class="mi">2</span><span class="p">),</span> <span class="mf">0.0</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>and the negative side is the same idea.</p>
+<p>Start the charges at random positions inside the cube, at rest:
+<code class="docutils literal notranslate"><span class="pre">np.random.uniform(-SIDE/2,</span> <span class="pre">SIDE/2,</span> <span class="pre">(N,</span> <span class="pre">3))</span></code> gives an <code class="docutils literal notranslate"><span class="pre">(N,</span> <span class="pre">3)</span></code> array of uniform random points.
+With 800 charges each run takes up to a minute or so.  Then:</p>
+<ol class="arabic simple">
+<li><p>show the final positions in a 3D scatter;</p></li>
+<li><p>check that the interior is screened with a field map on the <span class="math notranslate nohighlight">\(z = 0\)</span> slice
+(<code class="docutils literal notranslate"><span class="pre">GetSquarePoints(-2,</span> <span class="pre">2)</span></code>);</p></li>
+<li><p>animate the relaxation with <code class="docutils literal notranslate"><span class="pre">animate_charges</span></code>.</p></li>
+</ol>
+<p><strong>Parameters.</strong>  <span class="math notranslate nohighlight">\(N = 800\)</span> charges, side <span class="math notranslate nohighlight">\(L = 2\)</span> (<code class="docutils literal notranslate"><span class="pre">SIDE</span></code>), <span class="math notranslate nohighlight">\(T_\mathrm{max} = 4\)</span>.</p>
+<p><strong>Deliverables</strong></p>
+<ul class="simple">
+<li><p>3D scatter of the relaxed charges.</p></li>
+<li><p>Field map on the <span class="math notranslate nohighlight">\(z = 0\)</span> slice.</p></li>
+<li><p>Histogram of distances from the center.</p></li>
+<li><p>The animation.</p></li>
+</ul>
+<p><strong>Question.</strong>  Where is the surface charge density largest, and why?</p>
+<div><img src="https://clark.physics.illinois.edu/246img/AnsStart.svg" width=200 align=left alt="Answer (start)"></img><br></div><p><em>Your answer here.</em></p>
+<div><img src="https://clark.physics.illinois.edu/246img/AnsEnd.svg" width=200 align=left alt="Answer (end)"></img><br></div><hr class="docutils" />
+<p><strong>Acknowledgements:</strong></p>
+<ul class="simple">
+<li><p>Bryan Clark (original)</p></li>
+</ul>
+<p>© Copyright 2026</p>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="intro.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Electricity and Magnetism</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="MovingCharges.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Electrodynamics</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item"><div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-0-the-electric-field-of-point-charges">Exercise 0. The Electric Field of Point Charges</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-writing-field">a. Writing <code class="docutils literal notranslate"><span class="pre">field</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#b-two-charges">b. Two charges</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#c-the-field-along-a-line">c. The field along a line</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#d-the-field-on-a-plane">d. The field on a plane</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-1-charges-on-a-sphere">Exercise 1. Charges on a Sphere</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-placing-charges-on-a-sphere">a. Placing charges on a sphere</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#b-the-interior-is-screened">b. The interior is screened</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-2-letting-the-charges-rearrange-themselves">Exercise 2. Letting the Charges Rearrange Themselves</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-charges-in-a-solid-metal-ball">a. Charges in a solid metal ball</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#b-a-conductor-in-an-external-field">b. A conductor in an external field</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#c-a-hemispherical-conductor">c. A hemispherical conductor</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#d-a-cubic-conductor">d. A cubic conductor</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Bryan Clark
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2024.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="_static/scripts/bootstrap.js?digest=55c26ed414f5f8a31ebb"></script>
+<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=55c26ed414f5f8a31ebb"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
