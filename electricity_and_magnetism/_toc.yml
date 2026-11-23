@@ -3,6 +3,14 @@
 
 format: jb-book
 root: intro
-chapters:
-- file: Electrostatics.ipynb
-- file: MovingCharges.ipynb
+
+parts:
+  - caption: "Physics 435"
+    chapters:
+      - file: conductors.ipynb
+  - caption: "Physics 436"
+    chapters:
+      - file: MovingCharges.ipynb
+  - caption: "Other"
+    chapters:
+      - file: Electrostatics.ipynb
